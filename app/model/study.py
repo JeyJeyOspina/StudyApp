@@ -17,14 +17,14 @@ class Calendario:
         for evento in self.eventos:
             if titulo == self.eventos[evento].titulo:
                 return True
-                break
         return False
 
-    def agregar_evento(self, titulo: str, fecha: int, duracion: int = "", ubicacion: str = "", detalles: str = ""):
+    def agregar_evento(self, titulo: str, fecha: int, duracion: int = 0, ubicacion: str = "", detalles: str = ""):
         self.eventos.append(Evento(titulo, fecha))
 
     def eventos_del_tiempo(self, tiempo: int):
         pass
+
 
 class GrupoDeEstudio:
 
@@ -34,6 +34,7 @@ class GrupoDeEstudio:
         self.modalidad: str = modalidad
         self.horario: int = horario
         self.miembros: list[Usuario] = []
+
 
 class Usuario:
 
@@ -49,6 +50,7 @@ class Usuario:
         if len(self.grupos_pertenecientes) == 0:
             return False
         return True
+
 
 class PlanDeEstudio:
 
@@ -73,6 +75,11 @@ class Estudio:
             return True
         return False
 
+    def iniciar_sesion(self, usuario: int, contra: int) -> bool:
+        for estudiante in self.estudiantes:
+            if estudiante.id == usuario:
+                return True
+        return False
 
 
 
