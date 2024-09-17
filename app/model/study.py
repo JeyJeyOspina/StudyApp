@@ -42,13 +42,21 @@ class Usuario:
         self.correo: str = correo
         self.id: int = id
         self.carrera: str = carrera
-        self.semestre_actual = int = semestre_actual
+        self.semestre_actual: int = semestre_actual
         self.grupos_pertenecientes: list[GrupoDeEstudio] = []
 
     def pertenece_a_almenos_un_grupo(self) -> bool:
-        if self.grupos_pertenecientes == None:
+        if len(self.grupos_pertenecientes) == 0:
             return False
         return True
+
+class PlanDeEstudio:
+
+    def __init__(self, materia: str, universidad: str, intensidad_semanal: int):
+        self.materia: str = materia
+        self.universidad: str = universidad
+        self.intensidad_semanal: int = intensidad_semanal
+
 
 
 
