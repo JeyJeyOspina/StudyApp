@@ -58,6 +58,20 @@ class PlanDeEstudio:
         self.intensidad_semanal: int = intensidad_semanal
 
 
+class Estudio:
+
+    def __init__(self, lista_de_estudiantes: list[Usuario],
+                 grupos_de_estudio: list[GrupoDeEstudio], planes_de_estudio: list[PlanDeEstudio]):
+        self.estudiantes: list[Usuario] = lista_de_estudiantes
+        self.grupos_de_estudio: list[GrupoDeEstudio] = grupos_de_estudio
+        self.planes_de_estudio: list[PlanDeEstudio] = planes_de_estudio
+
+    def registrar_estudiante(self, nombre: str, id: int, correo: str, carrera: str, semestre_actual: int):
+        estudiantes_antes: int = len(self.estudiantes)
+        self.estudiantes.append(Usuario(nombre, correo, id, carrera, semestre_actual))
+        if estudiantes_antes < len(self.estudiantes):
+            return True
+        return False
 
 
 
