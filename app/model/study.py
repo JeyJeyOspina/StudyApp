@@ -15,7 +15,7 @@ class Calendario:
 
     def verificar_evento(self, titulo: str) -> bool:
         for evento in self.eventos:
-            if titulo == self.eventos[evento].titulo:
+            if evento.titulo == titulo:
                 return True
         return False
 
@@ -80,6 +80,15 @@ class Estudio:
             if estudiante.id == usuario:
                 return True
         return False
+
+    # Hace parte del R4 que aún no tiene la descomposición corregida
+    def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: int):
+        grupos_antes: int = len(self.grupos_de_estudio)
+        self.grupos_de_estudio.append(GrupoDeEstudio(nombre, tematica, modalidad, horario))
+        if grupos_antes < len(self.grupos_de_estudio):
+            return True
+        return False
+
 
 
 
