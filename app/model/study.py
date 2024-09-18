@@ -20,7 +20,7 @@ class Calendario:
         return False
 
     def agregar_evento(self, titulo: str, fecha: int, duracion: int = 0, ubicacion: str = "", detalles: str = ""):
-        self.eventos.append(Evento(titulo, fecha))
+        self.eventos.append(Evento(titulo, fecha, duracion, ubicacion, detalles))
 
     def eventos_del_tiempo(self, tiempo: int):
         pass
@@ -75,9 +75,9 @@ class Estudio:
             return True
         return False
 
-    def iniciar_sesion(self, usuario: int, contra: int) -> bool:
+    def iniciar_sesion(self, correo: int, contra: int) -> bool:
         for estudiante in self.estudiantes:
-            if estudiante.id == usuario:
+            if estudiante.correo == correo and estudiante.id == contra:
                 return True
         return False
 
@@ -97,17 +97,8 @@ class Estudio:
         return planes_por_materia
 
 
-    def plan_de_estudio_universidad(self, universidad: str) -> PlanDeEstudio:
-        for plan_de_estudio in self.planes_de_estudio:
-            ed = Estudio
-
-
-
-
-
-
-
-
-
-
-
+"""    def plan_de_estudio_universidad(self, materia: str, universidad: str) -> PlanDeEstudio:
+        ed = Estudio().buscar_plan_de_estudio(materia)
+        for plan_de_estudio in ed:
+            if plan_de_estudio.universidad == universidad:
+                return plan_de_estudio"""
