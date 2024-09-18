@@ -62,11 +62,11 @@ class PlanDeEstudio:
 
 class Estudio:
 
-    def __init__(self, lista_de_estudiantes: list[Usuario],
-                 grupos_de_estudio: list[GrupoDeEstudio], planes_de_estudio: list[PlanDeEstudio]):
-        self.estudiantes: list[Usuario] = lista_de_estudiantes
-        self.grupos_de_estudio: list[GrupoDeEstudio] = grupos_de_estudio
-        self.planes_de_estudio: list[PlanDeEstudio] = planes_de_estudio
+    def __init__(self, lista_de_estudiantes: list[Usuario] = None,
+                 grupos_de_estudio: list[GrupoDeEstudio] = None, planes_de_estudio: list[PlanDeEstudio] = None):
+        self.estudiantes: list[Usuario] = lista_de_estudiantes if lista_de_estudiantes is not None else []
+        self.grupos_de_estudio: list[GrupoDeEstudio] = grupos_de_estudio if grupos_de_estudio is not None else []
+        self.planes_de_estudio: list[PlanDeEstudio] = planes_de_estudio if planes_de_estudio is None else []
 
     def registrar_estudiante(self, nombre: str, id: int, correo: str, carrera: str, semestre_actual: int):
         estudiantes_antes: int = len(self.estudiantes)
@@ -89,8 +89,17 @@ class Estudio:
             return True
         return False
 
+    def buscar_plan_de_estudio(self, materia: str) -> list[PlanDeEstudio]:
+        planes_por_materia: list[PlanDeEstudio] = []
+        for plan_de_estudio in self.planes_de_estudio:
+            if plan_de_estudio.materia == materia:
+                planes_por_materia.append(plan_de_estudio)
+        return planes_por_materia
 
 
+    def plan_de_estudio_universidad(self, universidad: str) -> PlanDeEstudio:
+        for plan_de_estudio in self.planes_de_estudio:
+            ed = Estudio
 
 
 
