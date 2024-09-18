@@ -14,15 +14,15 @@ class ConsoleView:
 
     @staticmethod
     def show_menu():
-        print("\nOPTIONS:")
+        print("\nMENÚ:")
         print("1. Ver Calendario Personal")
         print("2. Agregar un Evento al Clendario")
         print("3. Crear Grupo de Estudio")
         print("4. Buscar Grupo de Estudio")
         print("5. Agregar un Evento al Grupo de Estudio")
         print("6. Buscar Plan de Estudio")
-        print("7. Exit program")
-        option = int(input("Enter an option: "))
+        print("7. Salir de la Aplicación")
+        option = int(input("Ingrese una Opción: "))
         while option not in range(1, 8):
             print(">>> ERROR: Invalid option. Try again")
             option = int(input("Enter an option: "))
@@ -73,14 +73,14 @@ class ConsoleView:
         horario = int(input("Ingrese la la hora de reunión en formato militar: "))
         resultado = self.estudio.registrar_grupo_de_estudio(nombre,tematica, modalidad,horario)
         if resultado:
-            print(f"Grupo {nombre} fue creado con Exito")
+            print(f"Grupo {nombre} fue creado con Éxito")
         else:
             print(f"No fue posible crear el Grupo {nombre}")
 
 
-
     def buscar_grupo_de_estudio(self):
-        pass
+        print("\n=== BUSCAR GRUPO DE ESTUDIO ===\n")
+
 
     def agregar_evento_grupo_estudio(self):
         pass
