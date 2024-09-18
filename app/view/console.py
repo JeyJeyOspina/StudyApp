@@ -67,14 +67,15 @@ class ConsoleView:
 
     def crear_grupo_de_estudio(self):
         print("\n=== CREAR GRUPO DE ESTUDIO ===\n")
-        nombre = input("Ingrese el nombre del Grupo")
-        tematica = input("Ingrese la materia de Estudio")
-        modalidad = input("Ingrese la modalidad de las Reuniones, es decir, Presencial o Virtual")
-        horario = int(input("Ingrese la la hora de reunión en formato militar"))
+        nombre = input("Ingrese el nombre del Grupo: ")
+        tematica = input("Ingrese la materia de Estudio: ")
+        modalidad = input("Ingrese la modalidad de las Reuniones, es decir, Presencial o Virtual: ")
+        horario = int(input("Ingrese la la hora de reunión en formato militar: "))
         resultado = self.estudio.registrar_grupo_de_estudio(nombre,tematica, modalidad,horario)
         if resultado:
             print(f"Grupo {nombre} fue creado con Exito")
-        print(f"No fue posible crear el Grupo {nombre}")
+        else:
+            print(f"No fue posible crear el Grupo {nombre}")
 
 
 
