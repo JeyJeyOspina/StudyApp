@@ -82,7 +82,7 @@ class Estudio:
         return False
 
     # Hace parte del R4 que aún no tiene la descomposición corregida
-    def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: int):
+    def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: int) -> bool  :
         grupos_antes: int = len(self.grupos_de_estudio)
         self.grupos_de_estudio.append(GrupoDeEstudio(nombre, tematica, modalidad, horario))
         if grupos_antes < len(self.grupos_de_estudio):
