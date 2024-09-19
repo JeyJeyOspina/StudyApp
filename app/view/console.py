@@ -21,9 +21,10 @@ class ConsoleView:
         print("4. Buscar Grupo de Estudio")
         print("5. Agregar un Evento al Grupo de Estudio")
         print("6. Buscar Plan de Estudio")
-        print("7. Salir de la Aplicación")
+        print("7. Ingresar Grupo de Estudio")
+        print("8. Salir de la Aplicación")
         option = int(input("Ingrese una Opción: "))
-        while option not in range(1, 8):
+        while option not in range(1, 9):
             print(">>> ERROR: Invalid option. Try again")
             option = int(input("Enter an option: "))
         return option
@@ -49,6 +50,8 @@ class ConsoleView:
         elif option == 6:
             self.buscar_plan_estudio()
         elif option == 7:
+            self.ingresar_a_grupo_de_estudio()
+        elif option == 8:
             self.exit_app()
             return True
 
@@ -86,4 +89,7 @@ class ConsoleView:
         pass
 
     def buscar_plan_estudio(self):
+        pass
+
+    def ingresar_a_grupo_de_estudio(self):
         pass

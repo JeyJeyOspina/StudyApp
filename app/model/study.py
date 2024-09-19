@@ -89,12 +89,37 @@ class Estudio:
             return True
         return False
 
+    def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: int) -> list[GrupoDeEstudio] | str:
+        grupos_encontrados: list[GrupoDeEstudio] = []
+        for grupo in self.grupos_de_estudio:
+            if grupo.tematica == tematica and  grupo.modalidad == modalidad and grupo.horario == horario:
+                grupos_encontrados.append(grupo)
+        if len(grupos_encontrados) != 0:
+            return grupos_encontrados
+        else:
+            return (f"No hay grupos disponibles con tematica de {tematica}, "
+                    f"modalidad {modalidad} ni con horario {horario}")
+
+
+
+
     def buscar_plan_de_estudio(self, materia: str) -> list[PlanDeEstudio]:
         planes_por_materia: list[PlanDeEstudio] = []
         for plan_de_estudio in self.planes_de_estudio:
             if plan_de_estudio.materia == materia:
                 planes_por_materia.append(plan_de_estudio)
         return planes_por_materia
+
+    def agregar_nuevo_miembro(self, nombre: str, estudiante: Usuario) -> bool:
+        for grupo in self.grupos_de_estudio:
+            if grupo.nombre == nombre:
+                miembros_antes = len(grupo.miembros)
+                grupo.miembros.append(estudiante)
+                miembros_actual = len(grupo.miembros)
+                if miembros_antes < miembros_actual:
+                    return True
+                return False
+
 
 
 """    def plan_de_estudio_universidad(self, materia: str, universidad: str) -> PlanDeEstudio:
