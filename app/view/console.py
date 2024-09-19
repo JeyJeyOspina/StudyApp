@@ -88,10 +88,6 @@ class ConsoleView:
         horario: int = int(input("Ingrese el horario en el que desea el Grupo: "))
         print(self.estudio.buscar_grupo_de_estudio(tematica, modalidad, horario))
 
-
-
-
-
     def agregar_evento_grupo_estudio(self):
         pass
 

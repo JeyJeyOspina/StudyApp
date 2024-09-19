@@ -105,9 +105,6 @@ class Estudio:
             return (f"No hay grupos disponibles con tematica de {tematica}, "
                     f"modalidad {modalidad} ni con horario {horario}")
 
-
-
-
     def buscar_plan_de_estudio(self, materia: str) -> list[PlanDeEstudio]:
         planes_por_materia: list[PlanDeEstudio] = []
         for plan_de_estudio in self.planes_de_estudio:
@@ -115,7 +112,7 @@ class Estudio:
                 planes_por_materia.append(plan_de_estudio)
         return planes_por_materia
 
-    def agregar_nuevo_miembro(self, nombre: str, estudiante: Usuario) -> bool:
+    def registrar_nuevo_miembro(self, nombre: str, estudiante: Usuario) -> bool:
         for grupo in self.grupos_de_estudio:
             if grupo.nombre == nombre:
                 miembros_antes = len(grupo.miembros)
@@ -124,6 +121,9 @@ class Estudio:
                 if miembros_antes < miembros_actual:
                     return True
                 return False
+
+    def registrar_grupo_a_estudiante(self):
+        pass
 
 
 
