@@ -36,8 +36,8 @@ class GrupoDeEstudio:
         self.miembros: list[Usuario] = []
 
     def __str__(self):
-        return (f"Nombre: {self.nombre}\nTematica: {self.tematica}\n"
-                f"Modalidad: {self.modalidad}\nHorario: {self.horario}")
+        return (f"Nombre: {self.nombre}, Tematica: {self.tematica}, "
+                f"Modalidad: {self.modalidad}, Horario: {self.horario}")
 
 
 
@@ -94,13 +94,13 @@ class Estudio:
             return True
         return False
 
-    def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: int) -> list[GrupoDeEstudio] | str:
+    def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: int) -> list[str] | str:
         grupos_encontrados: list[GrupoDeEstudio] = []
         for grupo in self.grupos_de_estudio:
             if grupo.tematica == tematica and  grupo.modalidad == modalidad and grupo.horario == horario:
                 grupos_encontrados.append(grupo)
         if len(grupos_encontrados) != 0:
-            return grupos_encontrados
+            return [str(grupo) for grupo in grupos_encontrados]
         else:
             return (f"No hay grupos disponibles con tematica de {tematica}, "
                     f"modalidad {modalidad} ni con horario {horario}")
