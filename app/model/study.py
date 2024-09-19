@@ -35,6 +35,11 @@ class GrupoDeEstudio:
         self.horario: int = horario
         self.miembros: list[Usuario] = []
 
+    def __str__(self):
+        return (f"Nombre: {self.nombre}\nTematica: {self.tematica}\n"
+                f"Modalidad: {self.modalidad}\nHorario: {self.horario}")
+
+
 
 class Usuario:
 

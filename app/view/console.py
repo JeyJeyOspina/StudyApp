@@ -83,6 +83,13 @@ class ConsoleView:
 
     def buscar_grupo_de_estudio(self):
         print("\n=== BUSCAR GRUPO DE ESTUDIO ===\n")
+        tematica: str = input("Ingrese la tematica que desea que tenga el Grupo: ")
+        modalidad: str = input("Ingrese la modalidad que desea el Grupo: ")
+        horario: int = int(input("Ingrese el horario en el que desea el Grupo: "))
+        print(self.estudio.buscar_grupo_de_estudio(tematica, modalidad, horario))
+
+
+
 
 
     def agregar_evento_grupo_estudio(self):
