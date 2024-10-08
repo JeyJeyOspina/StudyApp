@@ -1,8 +1,11 @@
+from datetime import datetime, timedelta
+
+
 class Evento:
 
-    def __init__(self, titulo: str, fecha: int, duracion: int = 0, ubicacion: str = "", detalles: str = ""):
+    def __init__(self, titulo: str, fecha: datetime, duracion: int = 0, ubicacion: str = "", detalles: str = ""):
         self.titulo: str = titulo
-        self.fecha: int = fecha
+        self.fecha: datetime = fecha
         self.duracion: int = duracion
         self.ubicacion: str = ubicacion
         self.detalles: str = detalles
@@ -19,11 +22,23 @@ class Calendario:
                 return True
         return False
 
-    def agregar_evento(self, titulo: str, fecha: int, duracion: int = 0, ubicacion: str = "", detalles: str = ""):
+    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 0, ubicacion: str = "", detalles: str = ""):
         self.eventos.append(Evento(titulo, fecha, duracion, ubicacion, detalles))
 
-    def eventos_del_tiempo(self, tiempo: int):
-        pass
+    def eventos_del_tiempo(self, fecha_inicio: datetime, fecha_fin: datetime) -> list:
+        fechas_disponibles = []
+        fecha_actual = fecha_inicio
+
+        while fecha_actual <= fecha_fin:
+            fechas_disponibles.append(fecha_actual)
+            fecha_actual += timedelta(hours=2)
+
+        # Filtrar las fechas con eventos ya registrados
+        for evento in self.eventos:
+            if fecha_inicio <= evento.fecha <= fecha_fin:
+                fechas_disponibles = [fecha for fecha in fechas_disponibles if fecha != evento.fecha]
+
+        return fechas_disponibles
 
 
 class GrupoDeEstudio:
@@ -38,7 +53,6 @@ class GrupoDeEstudio:
     def __str__(self):
         return (f"Nombre: {self.nombre}, Tematica: {self.tematica}, "
                 f"Modalidad: {self.modalidad}, Horario: {self.horario}")
-
 
 
 class Usuario:
@@ -87,7 +101,7 @@ class Estudio:
         return False
 
     # Hace parte del R4 que aún no tiene la descomposición corregida
-    def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: int) -> bool  :
+    def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: int) -> bool:
         grupos_antes: int = len(self.grupos_de_estudio)
         self.grupos_de_estudio.append(GrupoDeEstudio(nombre, tematica, modalidad, horario))
         if grupos_antes < len(self.grupos_de_estudio):
@@ -97,7 +111,7 @@ class Estudio:
     def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: int) -> list[str] | str:
         grupos_encontrados: list[GrupoDeEstudio] = []
         for grupo in self.grupos_de_estudio:
-            if grupo.tematica == tematica and  grupo.modalidad == modalidad and grupo.horario == horario:
+            if grupo.tematica == tematica and grupo.modalidad == modalidad and grupo.horario == horario:
                 grupos_encontrados.append(grupo)
         if len(grupos_encontrados) != 0:
             return [str(grupo) for grupo in grupos_encontrados]
@@ -124,7 +138,6 @@ class Estudio:
 
     def registrar_grupo_a_estudiante(self):
         pass
-
 
 
 """    def plan_de_estudio_universidad(self, materia: str, universidad: str) -> PlanDeEstudio:
