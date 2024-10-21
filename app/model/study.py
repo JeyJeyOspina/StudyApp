@@ -64,9 +64,23 @@ class PlanDeEstudio:
         self.universidad: str = universidad
         self.intensidad_semanal: int = intensidad_semanal
 
+class Examen:
+
+    def __init__(self, materia: str, tematica: str, numero_preguntas: int, preguntas: list[str], respuestas_correctas: int):
+        self.materia: str = materia
+        self.tematica: str = tematica
+        self.numero_preguntas: int = numero_preguntas
+        self.preguntas: list[str] = preguntas
+        self.respuestas_correctas: int = respuestas_correctas
+
+    def iniciar_examen(self):
+
+        return self.preguntas
+
 
 class Estudio:
 
+    #Revisar si es necesario que la clase Estudio reciba dichos atributos como parametros
     def __init__(self, lista_de_estudiantes: list[Usuario] = None,
                  grupos_de_estudio: list[GrupoDeEstudio] = None, planes_de_estudio: list[PlanDeEstudio] = None):
         self.estudiantes: list[Usuario] = lista_de_estudiantes if lista_de_estudiantes is not None else []
@@ -86,7 +100,6 @@ class Estudio:
                 return True
         return False
 
-    # Hace parte del R4 que aún no tiene la descomposición corregida
     def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: int) -> bool  :
         grupos_antes: int = len(self.grupos_de_estudio)
         self.grupos_de_estudio.append(GrupoDeEstudio(nombre, tematica, modalidad, horario))
@@ -112,18 +125,18 @@ class Estudio:
                 planes_por_materia.append(plan_de_estudio)
         return planes_por_materia
 
-    def registrar_nuevo_miembro(self, nombre: str, estudiante: Usuario) -> bool:
+"""    def registrar_nuevo_miembro(self, nombre: str) -> bool:
         for grupo in self.grupos_de_estudio:
             if grupo.nombre == nombre:
                 miembros_antes = len(grupo.miembros)
-                grupo.miembros.append(estudiante)
+                grupo.miembros.append(self.estudiantes)
                 miembros_actual = len(grupo.miembros)
                 if miembros_antes < miembros_actual:
                     return True
-                return False
+                return False"""
 
-    def registrar_grupo_a_estudiante(self):
-        pass
+    #def registrar_grupo_a_estudiante(self):
+     #   pass
 
 
 

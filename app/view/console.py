@@ -52,9 +52,10 @@ class ConsoleView:
         elif option == 7:
             self.ingresar_a_grupo_de_estudio()
         elif option == 8:
+            self.buscar_examen()
+        elif option == 9:
             self.exit_app()
             return True
-
         return False
 
     def exit_app(self):
@@ -95,4 +96,10 @@ class ConsoleView:
         pass
 
     def ingresar_a_grupo_de_estudio(self):
+        pass
+        print("\n=== INGRESAR A GRUPO DE ESTUDIO ===\n")
+        nombre = input("Ingrese el nombre del Grupo de Estudio al que se desea Unir: ")
+        self.estudio.registrar_nuevo_miembro(nombre)
+
+    def buscar_examen(self):
         pass
