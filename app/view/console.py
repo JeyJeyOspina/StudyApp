@@ -1,3 +1,5 @@
+from datetime import datetime, time
+
 from app.model.study import Estudio
 
 
@@ -57,6 +59,7 @@ class ConsoleView:
 
         return False
 
+    @staticmethod
     def exit_app(self):
         print("++++++++++++++++++++++++++++++++")
         print("+++ Saliste de la Aplicación +++")
@@ -73,20 +76,34 @@ class ConsoleView:
         nombre = input("Ingrese el nombre del Grupo: ")
         tematica = input("Ingrese la materia de Estudio: ")
         modalidad = input("Ingrese la modalidad de las Reuniones, es decir, Presencial o Virtual: ")
-        horario = int(input("Ingrese la hora de reunión en formato militar: "))
-        resultado = self.estudio.registrar_grupo_de_estudio(nombre,tematica, modalidad,horario)
+        while True:
+            horario_input = input("Ingrese el horario en el que desea el Grupo (formato HH:MM): ")
+            try:
+                horario = datetime.strptime(horario_input, "%H:%M").time()
+                break
+            except ValueError:
+                print("Formato de hora inválido. Por favor, intente de nuevo.")
+        resultado = self.estudio.registrar_grupo_de_estudio(nombre, tematica, modalidad, horario)
         if resultado:
             print(f"Grupo {nombre} fue creado con Éxito")
         else:
             print(f"No fue posible crear el Grupo {nombre}")
 
-
     def buscar_grupo_de_estudio(self):
-        print("\n=== BUSCAR GRUPO DE ESTUDIO ===\n")
-        tematica: str = input("Ingrese la tematica que desea que tenga el Grupo: ")
-        modalidad: str = input("Ingrese la modalidad que desea el Grupo: ")
-        horario: int = int(input("Ingrese el horario en el que desea el Grupo: "))
-        print(self.estudio.buscar_grupo_de_estudio(tematica, modalidad, horario))
+        print("=== BUSCAR GRUPO DE ESTUDIO ===")
+        tematica = input("Ingrese la temática que desea que tenga el Grupo: ")
+        modalidad = input("Ingrese la modalidad que desea el Grupo: ")
+
+        while True:
+            horario_input = input("Ingrese el horario en el que desea el Grupo (formato HH:MM): ")
+            try:
+                horario = datetime.strptime(horario_input, "%H:%M").time()
+                break
+            except ValueError:
+                print("Formato de hora inválido. Por favor, intente de nuevo.")
+
+        grupos_encontrados = self.estudio.buscar_grupo_de_estudio(tematica, modalidad, horario)
+        print(grupos_encontrados)
 
     def agregar_evento_grupo_estudio(self):
         pass

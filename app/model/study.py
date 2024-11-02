@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 
 
 class Evento:
@@ -27,8 +27,8 @@ class Calendario:
                 return True
         return False
 
-    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 1,
-                       ubicacion: str = "", detalles: str = "") -> bool:
+    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 1, ubicacion: str = "",
+                       detalles: str = "") -> bool:
         ahora = datetime.now()
         if fecha < ahora:
             print(">>> ERROR: No se puede agregar un evento en una fecha y hora pasada.")
@@ -50,11 +50,11 @@ class Calendario:
 
 class GrupoDeEstudio:
 
-    def __init__(self, nombre: str, tematica: str, modalidad: str, horario: int):
+    def __init__(self, nombre: str, tematica: str, modalidad: str, horario: time):
         self.nombre: str = nombre
         self.tematica: str = tematica
         self.modalidad: str = modalidad
-        self.horario: int = horario
+        self.horario: time = horario
         self.miembros: list[Usuario] = []
 
     def __str__(self):
@@ -101,21 +101,21 @@ class Estudio:
             return True
         return False
 
-    def iniciar_sesion(self, correo: int, contra: int) -> bool:
+    def iniciar_sesion(self, correo: str, contra: int) -> bool:
         for estudiante in self.estudiantes:
             if estudiante.correo == correo and estudiante.id == contra:
                 return True
         return False
 
     # Hace parte del R4 que aún no tiene la descomposición corregida
-    def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: int) -> bool:
+    def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: time) -> bool:
         grupos_antes: int = len(self.grupos_de_estudio)
         self.grupos_de_estudio.append(GrupoDeEstudio(nombre, tematica, modalidad, horario))
         if grupos_antes < len(self.grupos_de_estudio):
             return True
         return False
 
-    def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: int) -> list[str] | str:
+    def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: time) -> list[str] | str:
         grupos_encontrados: list[GrupoDeEstudio] = []
         for grupo in self.grupos_de_estudio:
             if grupo.tematica == tematica and grupo.modalidad == modalidad and grupo.horario == horario:
@@ -136,12 +136,15 @@ class Estudio:
     def registrar_nuevo_miembro(self, nombre: str, estudiante: Usuario) -> bool:
         for grupo in self.grupos_de_estudio:
             if grupo.nombre == nombre:
+                if estudiante in grupo.miembros:
+                    return False
                 miembros_antes = len(grupo.miembros)
                 grupo.miembros.append(estudiante)
                 miembros_actual = len(grupo.miembros)
                 if miembros_antes < miembros_actual:
                     return True
                 return False
+        return False
 
     def registrar_grupo_a_estudiante(self, estudiante: Usuario, nombre_grupo: str) -> bool:
         for grupo in self.grupos_de_estudio:
@@ -156,8 +159,9 @@ class Estudio:
         print(f"Grupo de estudio '{nombre_grupo}' no encontrado.")
         return False
 
-    def plan_de_estudio_universidad(self, materia: str, universidad: str) -> PlanDeEstudio:
+    def plan_de_estudio_universidad(self, materia: str, universidad: str) -> PlanDeEstudio | None:
         ed = self.buscar_plan_de_estudio(materia)
         for plan_de_estudio in ed:
             if plan_de_estudio.universidad == universidad:
                 return plan_de_estudio
+        return None
