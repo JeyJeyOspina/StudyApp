@@ -27,25 +27,19 @@ class Calendario:
                 return True
         return False
 
-    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 1, ubicacion: str = "",
-                       detalles: str = "") -> bool:
-        ahora = datetime.now()
-        if fecha < ahora:
-            print(">>> ERROR: No se puede agregar un evento en una fecha y hora pasada.")
-            return False
-
+    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 1, ubicacion: str = "", detalles: str = "") -> bool:
         nuevo_evento = Evento(titulo, fecha, duracion, ubicacion, detalles)
-        self.eventos.append(nuevo_evento)
-        print(f"Evento '{titulo}' agregado con éxito.")
-        return True
+        if fecha >= datetime.now():
+            self.eventos.append(nuevo_evento)
+            print(f"Evento '{titulo}' agregado con éxito.")
+            return True
+        return False
 
-    def eventos_del_tiempo(self, tiempo: int) -> list[str]:
+    def eventos_del_tiempo(self, dias: int):
         ahora = datetime.now()
-        eventos_en_tiempo = []
-        for evento in self.eventos:
-            if ahora <= evento.fecha <= ahora + timedelta(hours=tiempo):
-                eventos_en_tiempo.append(str(evento))
-        return eventos_en_tiempo if eventos_en_tiempo else ["No hay eventos próximos en el periodo indicado."]
+        limite = ahora + timedelta(days=dias)
+        eventos_proximos = [evento for evento in self.eventos if ahora <= evento.fecha < limite]
+        return eventos_proximos
 
 
 class GrupoDeEstudio:
@@ -88,11 +82,14 @@ class PlanDeEstudio:
 
 class Estudio:
 
-    def __init__(self, lista_de_estudiantes: list[Usuario] = None,
-                 grupos_de_estudio: list[GrupoDeEstudio] = None, planes_de_estudio: list[PlanDeEstudio] = None):
+    def __init__(self,
+                 lista_de_estudiantes: list[Usuario] = None,
+                 grupos_de_estudio: list[GrupoDeEstudio] = None,
+                 planes_de_estudio: list[PlanDeEstudio] = None):
         self.estudiantes: list[Usuario] = lista_de_estudiantes if lista_de_estudiantes is not None else []
         self.grupos_de_estudio: list[GrupoDeEstudio] = grupos_de_estudio if grupos_de_estudio is not None else []
         self.planes_de_estudio: list[PlanDeEstudio] = planes_de_estudio if planes_de_estudio is None else []
+        self.calendario: Calendario = Calendario()
 
     def registrar_estudiante(self, nombre: str, id: int, correo: str, carrera: str, semestre_actual: int):
         estudiantes_antes: int = len(self.estudiantes)

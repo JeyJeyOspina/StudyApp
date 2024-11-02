@@ -1,6 +1,5 @@
 from datetime import datetime, time
-
-from app.model.study import Estudio
+from app.model.study import Estudio, Evento, GrupoDeEstudio
 
 
 class ConsoleView:
@@ -66,7 +65,21 @@ class ConsoleView:
         print("++++++++++++++++++++++++++++++++")
 
     def ver_calendario(self):
-        pass
+        print("\n=== CALENDARIO PERSONAL ===\n")
+        dias = int(input("Ingrese el número de días para ver eventos próximos: "))
+        eventos = self.estudio.calendario.eventos_del_tiempo(dias)
+
+        if eventos:
+            print("\n=== Eventos próximos ===\n")
+            for evento in eventos:
+                print(f"Título: {evento.titulo}")
+                print(f"Fecha: {evento.fecha}")
+                print(f"Duración: {evento.duracion} horas")
+                print(f"Ubicación: {evento.ubicacion}")
+                print(f"Detalles: {evento.detalles}")
+                print("--------------------------------------------------")
+        else:
+            print("No hay eventos agendados en los próximos días especificados.")
 
     def agregar_evento(self):
         pass
