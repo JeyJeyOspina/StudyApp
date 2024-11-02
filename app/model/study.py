@@ -27,9 +27,10 @@ class Calendario:
                 return True
         return False
 
-    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 1,
+    def agregar_evento(self, titulo: str, año: int,mes: int, dia: int, hora: int = 0, duracion: int = 1,
                        ubicacion: str = "", detalles: str = "") -> bool:
-        ahora = datetime.now()
+        ahora: datetime = datetime.now()
+        fecha: datetime = datetime(año, mes, dia, hora)
         if fecha < ahora:
             print(">>> ERROR: No se puede agregar un evento en una fecha y hora pasada.")
             return False
@@ -39,12 +40,12 @@ class Calendario:
         print(f"Evento '{titulo}' agregado con éxito.")
         return True
 
-    def eventos_del_tiempo(self, tiempo: int) -> list[str]:
+    def eventos_del_tiempo(self, tiempo: int) -> list[Evento]:
         ahora = datetime.now()
         eventos_en_tiempo = []
         for evento in self.eventos:
             if ahora <= evento.fecha <= ahora + timedelta(days=tiempo):
-                eventos_en_tiempo.append(str(evento))
+                eventos_en_tiempo.append(evento)
         return eventos_en_tiempo if eventos_en_tiempo else ["No hay eventos próximos en el periodo indicado."]
 
 

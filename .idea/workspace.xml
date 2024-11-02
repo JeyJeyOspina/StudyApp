@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Se cambia el parametro de timedelta por dias">
+      <change beforePath="$PROJECT_DIR$/app/model/study.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/study.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726760993007</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Se cambia el parametro de timedelta por dias">
+      <option name="closed" value="true" />
+      <created>1730579739360</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1730579739360</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,6 +308,7 @@
     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en la clase Estudio" />
     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en en la interfaz por consola" />
     <MESSAGE value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
-    <option name="LAST_COMMIT_MESSAGE" value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
+    <MESSAGE value="Se cambia el parametro de timedelta por dias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se cambia el parametro de timedelta por dias" />
   </component>
 </project>
