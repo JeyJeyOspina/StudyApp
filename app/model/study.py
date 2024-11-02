@@ -43,7 +43,7 @@ class Calendario:
         ahora = datetime.now()
         eventos_en_tiempo = []
         for evento in self.eventos:
-            if ahora <= evento.fecha <= ahora + timedelta(hours=tiempo):
+            if ahora <= evento.fecha <= ahora + timedelta(days=tiempo):
                 eventos_en_tiempo.append(str(evento))
         return eventos_en_tiempo if eventos_en_tiempo else ["No hay eventos próximos en el periodo indicado."]
 
