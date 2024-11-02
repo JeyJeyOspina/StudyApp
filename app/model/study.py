@@ -10,6 +10,11 @@ class Evento:
         self.ubicacion: str = ubicacion
         self.detalles: str = detalles
 
+    def __str__(self):
+        return (f"Evento: {self.titulo}, Fecha: {self.fecha}, "
+                f"Duración: {self.duracion} horas, Ubicación: {self.ubicacion}, "
+                f"Detalles: {self.detalles}")
+
 
 class Calendario:
 
@@ -22,23 +27,25 @@ class Calendario:
                 return True
         return False
 
-    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 0, ubicacion: str = "", detalles: str = ""):
-        self.eventos.append(Evento(titulo, fecha, duracion, ubicacion, detalles))
+    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 1,
+                       ubicacion: str = "", detalles: str = "") -> bool:
+        ahora = datetime.now()
+        if fecha < ahora:
+            print(">>> ERROR: No se puede agregar un evento en una fecha y hora pasada.")
+            return False
 
-    def eventos_del_tiempo(self, fecha_inicio: datetime, fecha_fin: datetime) -> list:
-        fechas_disponibles = []
-        fecha_actual = fecha_inicio
+        nuevo_evento = Evento(titulo, fecha, duracion, ubicacion, detalles)
+        self.eventos.append(nuevo_evento)
+        print(f"Evento '{titulo}' agregado con éxito.")
+        return True
 
-        while fecha_actual <= fecha_fin:
-            fechas_disponibles.append(fecha_actual)
-            fecha_actual += timedelta(hours=2)
-
-        # Filtrar las fechas con eventos ya registrados
+    def eventos_del_tiempo(self, tiempo: int) -> list[str]:
+        ahora = datetime.now()
+        eventos_en_tiempo = []
         for evento in self.eventos:
-            if fecha_inicio <= evento.fecha <= fecha_fin:
-                fechas_disponibles = [fecha for fecha in fechas_disponibles if fecha != evento.fecha]
-
-        return fechas_disponibles
+            if ahora <= evento.fecha <= ahora + timedelta(hours=tiempo):
+                eventos_en_tiempo.append(str(evento))
+        return eventos_en_tiempo if eventos_en_tiempo else ["No hay eventos próximos en el periodo indicado."]
 
 
 class GrupoDeEstudio:
@@ -136,12 +143,21 @@ class Estudio:
                     return True
                 return False
 
-    def registrar_grupo_a_estudiante(self):
-        pass
+    def registrar_grupo_a_estudiante(self, estudiante: Usuario, nombre_grupo: str) -> bool:
+        for grupo in self.grupos_de_estudio:
+            if grupo.nombre == nombre_grupo:
+                if estudiante not in grupo.miembros:
+                    grupo.miembros.append(estudiante)
+                    estudiante.grupos_pertenecientes.append(grupo)
+                    return True
+                else:
+                    print(f"El estudiante {estudiante.nombre} ya pertenece al grupo {nombre_grupo}.")
+                    return False
+        print(f"Grupo de estudio '{nombre_grupo}' no encontrado.")
+        return False
 
-
-"""    def plan_de_estudio_universidad(self, materia: str, universidad: str) -> PlanDeEstudio:
-        ed = Estudio().buscar_plan_de_estudio(materia)
+    def plan_de_estudio_universidad(self, materia: str, universidad: str) -> PlanDeEstudio:
+        ed = self.buscar_plan_de_estudio(materia)
         for plan_de_estudio in ed:
             if plan_de_estudio.universidad == universidad:
-                return plan_de_estudio"""
+                return plan_de_estudio
