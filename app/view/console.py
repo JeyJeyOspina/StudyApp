@@ -75,7 +75,14 @@ class ConsoleView:
         print("\n=== CREAR GRUPO DE ESTUDIO ===\n")
         nombre = input("Ingrese el nombre del Grupo: ")
         tematica = input("Ingrese la materia de Estudio: ")
-        modalidad = input("Ingrese la modalidad de las Reuniones, es decir, Presencial o Virtual: ")
+        while True:
+            modalidad = input("Ingrese la modalidad de las Reuniones (Presencial o Virtual): ")
+            if modalidad.lower() in ["presencial", "virtual"]:
+                modalidad = modalidad.capitalize()
+                break
+            else:
+                print(">>> ERROR: Modalidad no válida. Por favor, ingrese 'Presencial' o 'Virtual'.")
+
         while True:
             horario_input = input("Ingrese el horario en el que desea el Grupo (formato HH:MM): ")
             try:
@@ -92,7 +99,13 @@ class ConsoleView:
     def buscar_grupo_de_estudio(self):
         print("=== BUSCAR GRUPO DE ESTUDIO ===")
         tematica = input("Ingrese la temática que desea que tenga el Grupo: ")
-        modalidad = input("Ingrese la modalidad que desea el Grupo: ")
+        while True:
+            modalidad = input("Ingrese la modalidad de las Reuniones (Presencial o Virtual): ")
+            if modalidad.lower() in ["presencial", "virtual"]:
+                modalidad = modalidad.capitalize()
+                break
+            else:
+                print(">>> ERROR: Modalidad no válida. Por favor, ingrese 'Presencial' o 'Virtual'.")
 
         while True:
             horario_input = input("Ingrese el horario en el que desea el Grupo (formato HH:MM): ")
