@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se implementa el metodo crear_grupo de la clase VistaPrincipal" />
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Se corrige el modulo vista_grupos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -447,7 +447,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730671417138</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="se implementa opciones definidas para los campos de modalidad y hora en el metodo crear_grupo de la clase CrearGrupo del modulo vista_grupo">
+      <option name="closed" value="true" />
+      <created>1730671828035</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1730671828035</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Se corrige el modulo vista_grupos">
+      <option name="closed" value="true" />
+      <created>1730671986847</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1730671986847</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -477,8 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se realizan correciones en los primeros 3 metodos de la clase Estudio" />
-    <MESSAGE value="Se cambia el tipo de parametro de la calse Estudio" />
     <MESSAGE value="Se corrige el metodo de iniciar sesión y se comenta el metódo que filtra los planes de estudio por Universidad" />
     <MESSAGE value="Se empieza a crear la clase ConsoleView para la capa de interfaz con el ususario, creando los metodos mensaje de bienvenida, mostrar mensaje y app en bucle" />
     <MESSAGE value="Se agregaron los encabezados de los metodos necesarios para la interfaz y se definio el metodo crear_grupo_de_estudio" />
@@ -502,6 +516,8 @@
     <MESSAGE value="se modifica el modulo vista_principal para conectarlo con vista_grupos" />
     <MESSAGE value="se crea el modulo vista crear grupos" />
     <MESSAGE value="se implementa el metodo crear_grupo de la clase VistaPrincipal" />
-    <option name="LAST_COMMIT_MESSAGE" value="se implementa el metodo crear_grupo de la clase VistaPrincipal" />
+    <MESSAGE value="se implementa opciones definidas para los campos de modalidad y hora en el metodo crear_grupo de la clase CrearGrupo del modulo vista_grupo" />
+    <MESSAGE value="Se corrige el modulo vista_grupos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se corrige el modulo vista_grupos" />
   </component>
 </project>

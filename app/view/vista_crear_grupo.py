@@ -29,29 +29,29 @@ class VistaCrearGrupo:
         self.frame_form = tk.Frame(self.frame, bg="#003366")
         self.frame_form.pack(pady=10)
 
-        # Campos de texto
-        campos = [
-            ("Nombre:", "entry_nombre"),
-            ("Temática:", "entry_tematica"),
-            ("Hora (HH:MM):", "entry_hora")
-        ]
+        # Campo Nombre
+        label_nombre = tk.Label(self.frame_form, text="Nombre:", bg="#003366", fg="white")
+        label_nombre.pack(pady=5)
+        self.entry_nombre = ttk.Entry(self.frame_form, width=30)
+        self.entry_nombre.pack(pady=5)
 
-        for texto, atributo in campos:
-            label = tk.Label(self.frame_form, text=texto, bg="#003366", fg="white")
-            label.pack(pady=5)
-            entry = ttk.Entry(self.frame_form, width=30)
-            entry.pack(pady=5)
-            setattr(self, atributo, entry)
+        # Campo Temática (Combobox)
+        label_tematica = tk.Label(self.frame_form, text="Temática:", bg="#003366", fg="white")
+        label_tematica.pack(pady=5)
+        self.tematicas = ["Cálculos", "Desarrollo de Software", "Soluciones de Software",
+                          "Ciencia de Datos", "Física", "Algebra"]
+        self.combo_tematica = ttk.Combobox(
+            self.frame_form,
+            values=self.tematicas,
+            width=27,
+            state="readonly"
+        )
+        self.combo_tematica.pack(pady=5)
+        self.combo_tematica.set("Seleccione una temática")
 
         # Campo Modalidad (Combobox)
-        label_modalidad = tk.Label(
-            self.frame_form,
-            text="Modalidad:",
-            bg="#003366",
-            fg="white"
-        )
+        label_modalidad = tk.Label(self.frame_form, text="Modalidad:", bg="#003366", fg="white")
         label_modalidad.pack(pady=5)
-
         self.modalidades = ["Presencial", "Virtual", "Híbrido"]
         self.combo_modalidad = ttk.Combobox(
             self.frame_form,
@@ -60,7 +60,21 @@ class VistaCrearGrupo:
             state="readonly"
         )
         self.combo_modalidad.pack(pady=5)
-        self.combo_modalidad.set("Seleccione una modalidad")  # Valor por defecto
+        self.combo_modalidad.set("Seleccione una modalidad")
+
+        # Campo Hora (Combobox)
+        label_hora = tk.Label(self.frame_form, text="Hora:", bg="#003366", fg="white")
+        label_hora.pack(pady=5)
+        self.horas = [f"{h:02d}:00" for h in range(24)] + [f"{h:02d}:30" for h in range(24)]
+        self.horas.sort()
+        self.combo_hora = ttk.Combobox(
+            self.frame_form,
+            values=self.horas,
+            width=27,
+            state="readonly"
+        )
+        self.combo_hora.pack(pady=5)
+        self.combo_hora.set("Seleccione una hora")
 
         # Frame para botones
         self.frame_botones = tk.Frame(self.frame, bg="#003366")
@@ -86,27 +100,29 @@ class VistaCrearGrupo:
 
     def crear_grupo(self):
         nombre = self.entry_nombre.get().strip()
-        tematica = self.entry_tematica.get().strip()
+        tematica = self.combo_tematica.get()
         modalidad = self.combo_modalidad.get()
-        hora_str = self.entry_hora.get().strip()
+        hora_str = self.combo_hora.get()
 
         # Validaciones
-        if not all([nombre, tematica, hora_str]):
-            messagebox.showerror("Error", "Todos los campos son obligatorios.")
+        if not nombre:
+            messagebox.showerror("Error", "El nombre del grupo es obligatorio.")
+            return
+
+        if tematica not in self.tematicas:
+            messagebox.showerror("Error", "Debe seleccionar una temática válida.")
             return
 
         if modalidad not in self.modalidades:
             messagebox.showerror("Error", "Debe seleccionar una modalidad válida.")
             return
 
-        try:
-            hora, minuto = map(int, hora_str.split(':'))
-            if not (0 <= hora <= 23 and 0 <= minuto <= 59):
-                raise ValueError
-            horario = time(hour=hora, minute=minuto)
-        except ValueError:
-            messagebox.showerror("Error", "Formato de hora incorrecto. Use HH:MM (00:00 - 23:59)")
+        if hora_str not in self.horas:
+            messagebox.showerror("Error", "Debe seleccionar una hora válida.")
             return
+
+        hora, minuto = map(int, hora_str.split(':'))
+        horario = time(hour=hora, minute=minuto)
 
         if self.estudio.registrar_grupo_de_estudio(nombre, tematica, modalidad, horario):
             messagebox.showinfo("Éxito", "Grupo de estudio creado exitosamente.")
