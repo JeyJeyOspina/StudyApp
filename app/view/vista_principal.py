@@ -51,8 +51,8 @@ class VistaPrincipal:
 
     def ver_grupos(self):
         self.frame.pack_forget()
-        from app.view.vista_grupos import VistaGrupos
-        VistaGrupos(self.root, self.mostrar_vista_principal)
+        from app.view.vista_ver_grupos import VistaVerGrupos
+        VistaVerGrupos(self.root, self.mostrar_vista_principal)
 
     def mostrar_vista_principal(self):
         self.frame.pack(expand=True, fill='both', padx=20, pady=20)
