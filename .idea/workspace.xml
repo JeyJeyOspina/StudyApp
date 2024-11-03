@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se agrega el boton de buscar grupos en la vista principal">
-      <change afterPath="$PROJECT_DIR$/app/view/vista_ver_grupos.py" afterDir="false" />
-    </list>
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se modifica la vista ver grupos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -489,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730673266289</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="se modifica la vista ver grupos">
+      <option name="closed" value="true" />
+      <created>1730673801577</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1730673801577</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -519,7 +525,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mejora del metodo crear_grupo_de_estudio clase ConsoleView" />
     <MESSAGE value="se dejó empezado el metódo de buscar_grupo_de_estudio de ConsoleView" />
     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en la clase Estudio" />
     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en en la interfaz por consola" />
@@ -544,6 +549,7 @@
     <MESSAGE value="se agrega al modulo vista crear grupo, selecciones en los campos de tematica y hora" />
     <MESSAGE value="se agrega y se conecta en la vista principal el modulo buscar_grupo" />
     <MESSAGE value="se agrega el boton de buscar grupos en la vista principal" />
-    <option name="LAST_COMMIT_MESSAGE" value="se agrega el boton de buscar grupos en la vista principal" />
+    <MESSAGE value="se modifica la vista ver grupos" />
+    <option name="LAST_COMMIT_MESSAGE" value="se modifica la vista ver grupos" />
   </component>
 </project>
