@@ -1,10 +1,30 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
-
-from app.model.study import Estudio
-
+from app.view.vista_inicial import VistaInicial
+from app.view.vista_registro import VistaRegistro
 
 class Aplicacion:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.root.title("Calendario de Eventos")
+        self.root.geometry("400x300")
+
+    def run(self):
+        # Inicializar la vista inicial
+        self.vista_inicial = VistaInicial(self.root, self.cambiar_a_vista_registro)
+        self.root.mainloop()
+
+    def cambiar_a_vista_registro(self):
+        self.vista_inicial.destroy()  # Destruir la vista inicial
+        self.vista_registro = VistaRegistro(self.root, self.volver_a_vista_inicial)  # Pasar callback
+
+    def volver_a_vista_inicial(self):
+        self.vista_registro.destroy()  # Destruir la vista de registro
+        self.vista_inicial = VistaInicial(self.root, self.cambiar_a_vista_registro)  # Reiniciar la vista inicial
+
+
+
+
+"""class Aplicacion:
     def __init__(self, root):
         self.root = root
         self.root.title("Calendario de Eventos")
@@ -84,4 +104,4 @@ class Aplicacion:
 if __name__ == "__main__":
     root = tk.Tk()
     app = Aplicacion(root)
-    root.mainloop()
+    root.mainloop()"""

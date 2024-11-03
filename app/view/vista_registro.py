@@ -1,11 +1,11 @@
-import tkinter as tk
+
 from tkinter import ttk, messagebox
 from app.model.study import Estudio
 
 class VistaRegistro:
-    def __init__(self, root):
+    def __init__(self, root, callback_volver):
         self.root = root
-        self.estudio = Estudio()
+        self.estudio = Estudio()  # Instancia de Estudio
 
         self.frame_registro = ttk.Frame(self.root, padding="20")
         self.frame_registro.pack(expand=True)
@@ -40,6 +40,23 @@ class VistaRegistro:
         self.boton_registrar = ttk.Button(self.frame_registro, text="Registrar", command=self.registrar_estudiante)
         self.boton_registrar.pack(pady=10)
 
+        # Botón Volver
+        self.boton_volver = ttk.Button(self.frame_registro, text="Volver", command=callback_volver)
+        self.boton_volver.pack(pady=5)
+
     def registrar_estudiante(self):
         nombre = self.entry_nombre.get()
-        correo = self
+        correo = self.entry_correo.get()
+        id = int(self.entry_id.get())
+        carrera = self.entry_carrera.get()
+        semestre_actual = int(self.entry_semestre.get())
+
+        exito = self.estudio.registrar_estudiante(nombre, id, correo, carrera, semestre_actual)
+        if exito:
+            messagebox.showinfo("Éxito", "Estudiante registrado con éxito.")
+            self.frame_registro.destroy()  # Cerrar el formulario después de registrar
+        else:
+            messagebox.showerror("Error", "No se pudo registrar al estudiante.")
+
+    def destroy(self):
+        self.frame_registro.destroy() #Metodo para destruir la vista del registro
