@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Implementación de persistencia y patron Singleton en la clase Estudio">
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Correción de la dirección del archivo json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/datos_estudio.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/study.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/study.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -411,7 +410,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730668499501</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Correción de la dirección del archivo json">
+      <option name="closed" value="true" />
+      <created>1730669201288</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1730669201288</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -441,7 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create the classes Evento, Calendario and GrupoDeEstudio" />
     <MESSAGE value="Start the console in main.py" />
     <MESSAGE value="console and main implement" />
     <MESSAGE value="Se agrega el metodo inicializador de la clase Estudio y el metodo de resgistrar estudiante" />
@@ -466,6 +472,7 @@
     <MESSAGE value="Se resuelven errores en la interfaz" />
     <MESSAGE value="Se agrega la vista principal a la interfaz" />
     <MESSAGE value="Implementación de persistencia y patron Singleton en la clase Estudio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementación de persistencia y patron Singleton en la clase Estudio" />
+    <MESSAGE value="Correción de la dirección del archivo json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correción de la dirección del archivo json" />
   </component>
 </project>

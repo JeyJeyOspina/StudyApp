@@ -328,6 +328,8 @@ class Estudio:
                 return plan_de_estudio
         return None
 
+
+#Aqui esta el Código sin la implementación de la persistencia, lo deje para facilidad de estudio en cuanto a los cambios
 """class Estudio:
 
     def __init__(self,
