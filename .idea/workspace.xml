@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Se resuelven errores en la interfaz">
-      <change afterPath="$PROJECT_DIR$/app/view/vista_principal.py" afterDir="false" />
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Se agrega la vista principal a la interfaz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/interfaz_final.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/interfaz_final.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/study.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/study.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -395,7 +394,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730658469267</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Se agrega la vista principal a la interfaz">
+      <option name="closed" value="true" />
+      <created>1730665987129</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1730665987129</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,6 +456,7 @@
     <MESSAGE value="Conexion entre los modulos de la interfaz" />
     <MESSAGE value="Se modifica la estetica de la interfaz" />
     <MESSAGE value="Se resuelven errores en la interfaz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se resuelven errores en la interfaz" />
+    <MESSAGE value="Se agrega la vista principal a la interfaz" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega la vista principal a la interfaz" />
   </component>
 </project>
