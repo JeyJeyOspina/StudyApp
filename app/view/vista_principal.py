@@ -49,8 +49,12 @@ class VistaPrincipal:
             btn.pack(pady=5)
 
     def ver_grupos(self):
-        # Implementar vista de grupos de estudio
-        messagebox.showinfo("Grupos de Estudio", "Función en desarrollo")
+        self.frame.pack_forget()
+        from app.view.vista_grupos import VistaGrupos
+        VistaGrupos(self.root, self.mostrar_vista_principal)
+
+    def mostrar_vista_principal(self):
+        self.frame.pack(expand=True, fill='both', padx=20, pady=20)
 
     def crear_grupo(self):
         # Implementar creación de grupo de estudio
