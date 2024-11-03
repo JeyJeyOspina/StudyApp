@@ -9,7 +9,15 @@
             "grupos_pertenecientes": []
         }
     ],
-    "grupos_de_estudio": [],
+    "grupos_de_estudio": [
+        {
+            "nombre": "Grupo1",
+            "tematica": "F\u00edsica",
+            "modalidad": "Presencial",
+            "horario": "10:00:00",
+            "miembros": []
+        }
+    ],
     "planes_de_estudio": [],
     "calendario": {
         "eventos": []
