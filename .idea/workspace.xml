@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se agregan parametros de año, mes, dia y hora en la clase agregar_evento" />
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/console.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/console.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="model/cristo" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,15 +49,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "conexion-interfaz",
-    "last_opened_file_path": "C:/Users/Casa/PycharmProjects/POOProjects/ClassroomProject/StudyApp",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Casa/PycharmProjects/POOProjects/cli-painter-challenge&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="StudyApp" />
@@ -81,13 +84,14 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19" />
+        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
       </set>
     </attachedChunks>
   </component>
@@ -228,65 +232,10 @@
       <option name="project" value="LOCAL" />
       <updated>1726760855773</updated>
     </task>
-    <task id="LOCAL-00017" summary="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz">
-      <option name="closed" value="true" />
-      <created>1726760993007</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1726760993007</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Se cambia el parametro de timedelta por dias">
-      <option name="closed" value="true" />
-      <created>1730579739360</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1730579739360</updated>
-    </task>
-    <task id="LOCAL-00019" summary="se agregan parametros de año, mes, dia y hora en la clase agregar_evento">
-      <option name="closed" value="true" />
-      <created>1730580501759</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1730580501759</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="conexion-interfaz" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="*" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -314,8 +263,6 @@
     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en la clase Estudio" />
     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en en la interfaz por consola" />
     <MESSAGE value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
-    <MESSAGE value="Se cambia el parametro de timedelta por dias" />
-    <MESSAGE value="se agregan parametros de año, mes, dia y hora en la clase agregar_evento" />
-    <option name="LAST_COMMIT_MESSAGE" value="se agregan parametros de año, mes, dia y hora en la clase agregar_evento" />
+    <option name="LAST_COMMIT_MESSAGE" value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
   </component>
 </project>
