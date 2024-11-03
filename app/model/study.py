@@ -52,12 +52,14 @@ class GrupoDeEstudio:
         self.horario: time = horario
         self.miembros: list[Usuario] = []
 
-    def agregar_evento_grupo_de_estudio(self, calendario: Calendario, titulo: str, fecha: datetime, duracion: int = 1,
+    def agregar_evento_grupo_de_estudio(self, calendario: Calendario, titulo: str, year: int, mes: int, dia: int, hora: int = 0, duracion: int = 0,
                                         ubicacion: str = "", detalles: str = "") -> bool:
+
+        fecha: datetime = datetime(year, mes, dia, hora)
         if fecha < datetime.now():
             return False
 
-        evento_agregado = calendario.agregar_evento(titulo, fecha, duracion, ubicacion, detalles)
+        evento_agregado = calendario.agregar_evento(titulo, year, mes, dia, hora, duracion, ubicacion, detalles)
         if evento_agregado:
             return True
         else:
@@ -121,6 +123,7 @@ class Estudio:
                  lista_de_estudiantes: list[Usuario] = None,
                  grupos_de_estudio: list[GrupoDeEstudio] = None,
                  planes_de_estudio: list[PlanDeEstudio] = None):
+
         self.estudiantes: list[Usuario] = lista_de_estudiantes if lista_de_estudiantes is not None else []
         self.grupos_de_estudio: list[GrupoDeEstudio] = grupos_de_estudio if grupos_de_estudio is not None else []
         self.planes_de_estudio: list[PlanDeEstudio] = planes_de_estudio if planes_de_estudio is None else []
@@ -133,9 +136,9 @@ class Estudio:
             return True
         return False
 
-    def iniciar_sesion(self, correo: str, contra: int) -> bool:
+    def iniciar_sesion(self, correo: str, clave: int) -> bool:
         for estudiante in self.estudiantes:
-            if estudiante.correo == correo and estudiante.id == contra:
+            if estudiante.correo == correo and estudiante.id == clave:
                 return True
         return False
 

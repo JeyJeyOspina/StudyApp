@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="correcciones del merge pasado">
-      <change afterPath="$PROJECT_DIR$/app/view/interfaz.py" afterDir="false" />
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Se empieza a trabajar en una posible interfaz">
+      <change afterPath="$PROJECT_DIR$/app/view/prueba_interfaz.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/console.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/console.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,17 +52,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.interfaz.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "fusion-de-la-rama-de-cristobal-y-juan-jose",
-    "last_opened_file_path": "C:/Users/Casa/PycharmProjects/POOProjects/cli-painter-challenge",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.interfaz.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prueba_interfaz.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fusion-de-la-rama-de-cristobal-y-juan-jose&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Casa/PycharmProjects/POOProjects/cli-painter-challenge&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.interfaz">
+}</component>
+  <component name="RunManager" selected="Python.prueba_interfaz">
     <configuration name="interfaz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="StudyApp" />
       <option name="ENV_FILES" value="" />
@@ -108,11 +108,55 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="prueba2_interfaz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="StudyApp" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/view" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/view/prueba2_interfaz.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prueba_interfaz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="StudyApp" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/view" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/view/prueba_interfaz.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.prueba_interfaz" />
         <item itemvalue="Python.interfaz" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.main" />
+        <item itemvalue="Python.prueba2_interfaz" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main" />
       </list>
@@ -121,7 +165,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
+        <option value="bundled-python-sdk-d7ad00fb9fc3-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23726.102" />
       </set>
     </attachedChunks>
   </component>
@@ -278,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730599955321</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Se empieza a trabajar en una posible interfaz">
+      <option name="closed" value="true" />
+      <created>1730605865404</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730605865404</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -326,6 +378,7 @@
     <MESSAGE value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
     <MESSAGE value="actualizacion de version" />
     <MESSAGE value="correcciones del merge pasado" />
-    <option name="LAST_COMMIT_MESSAGE" value="correcciones del merge pasado" />
+    <MESSAGE value="Se empieza a trabajar en una posible interfaz" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se empieza a trabajar en una posible interfaz" />
   </component>
 </project>
