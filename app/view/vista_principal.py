@@ -57,8 +57,9 @@ class VistaPrincipal:
         self.frame.pack(expand=True, fill='both', padx=20, pady=20)
 
     def crear_grupo(self):
-        # Implementar creación de grupo de estudio
-        messagebox.showinfo("Crear Grupo", "Función en desarrollo")
+        self.frame.pack_forget()
+        from app.view.vista_crear_grupo import VistaCrearGrupo
+        VistaCrearGrupo(self.root, self.mostrar_vista_principal)
 
     def ver_calendario(self):
         # Implementar vista del calendario

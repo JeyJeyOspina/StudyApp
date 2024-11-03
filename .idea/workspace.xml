@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se modifica el modulo vista_principal para conectarlo con vista_grupos" />
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se crea el modulo vista crear grupos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -431,7 +431,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730670944283</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="se crea el modulo vista crear grupos">
+      <option name="closed" value="true" />
+      <created>1730671314413</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1730671314413</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,7 +469,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se agrega el metodo inicializador de la clase Estudio y el metodo de resgistrar estudiante" />
     <MESSAGE value="Se agregan los metodos resgistrar e iniciar sesion de la calse estudiante" />
     <MESSAGE value="Se realizan correciones en los primeros 3 metodos de la clase Estudio" />
     <MESSAGE value="Se cambia el tipo de parametro de la calse Estudio" />
@@ -486,6 +493,7 @@
     <MESSAGE value="Correción de la dirección del archivo json" />
     <MESSAGE value="Se crea el modulo vista_grupos" />
     <MESSAGE value="se modifica el modulo vista_principal para conectarlo con vista_grupos" />
-    <option name="LAST_COMMIT_MESSAGE" value="se modifica el modulo vista_principal para conectarlo con vista_grupos" />
+    <MESSAGE value="se crea el modulo vista crear grupos" />
+    <option name="LAST_COMMIT_MESSAGE" value="se crea el modulo vista crear grupos" />
   </component>
 </project>
