@@ -1,6 +1,6 @@
 from datetime import datetime
 from app.model.study import Estudio
-#from app.model.errors import EntradaInvalidaError, UsuarioNoEncontradoError, GrupoNoEncontradoError
+from app.model.errors import EntradaInvalidaError, UsuarioNoEncontradoError, GrupoNoEncontradoError
 
 
 class ConsoleView:
