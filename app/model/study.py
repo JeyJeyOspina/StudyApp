@@ -27,7 +27,7 @@ class Calendario:
                 return True
         return False
 
-    def agregar_evento(self, titulo: str, year: int,mes: int, dia: int, hora: int = 0, duracion: int = 1,
+    def agregar_evento(self, titulo: str, year: int, mes: int, dia: int, hora: int = 0, duracion: int = 1,
                        ubicacion: str = "", detalles: str = "") -> bool:
         fecha: datetime = datetime(year, mes, dia, hora)
         nuevo_evento = Evento(titulo, fecha, duracion, ubicacion, detalles)
