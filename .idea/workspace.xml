@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se agrega al modulo vista crear grupo, selecciones en los campos de tematica y hora">
-      <change beforePath="$PROJECT_DIR$/app/datos/datos_estudio.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/datos/datos_estudio.json" afterDir="false" />
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se agrega y se conecta en la vista principal el modulo buscar_grupo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/vista_principal.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/vista_principal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -473,7 +474,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730672207212</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="se agrega y se conecta en la vista principal el modulo buscar_grupo">
+      <option name="closed" value="true" />
+      <created>1730672629396</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1730672629396</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -503,7 +512,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se empieza a crear la clase ConsoleView para la capa de interfaz con el ususario, creando los metodos mensaje de bienvenida, mostrar mensaje y app en bucle" />
     <MESSAGE value="Se agregaron los encabezados de los metodos necesarios para la interfaz y se definio el metodo crear_grupo_de_estudio" />
     <MESSAGE value="Mejora del metodo crear_grupo_de_estudio clase ConsoleView" />
     <MESSAGE value="se dejó empezado el metódo de buscar_grupo_de_estudio de ConsoleView" />
@@ -528,6 +536,7 @@
     <MESSAGE value="se implementa opciones definidas para los campos de modalidad y hora en el metodo crear_grupo de la clase CrearGrupo del modulo vista_grupo" />
     <MESSAGE value="Se corrige el modulo vista_grupos" />
     <MESSAGE value="se agrega al modulo vista crear grupo, selecciones en los campos de tematica y hora" />
-    <option name="LAST_COMMIT_MESSAGE" value="se agrega al modulo vista crear grupo, selecciones en los campos de tematica y hora" />
+    <MESSAGE value="se agrega y se conecta en la vista principal el modulo buscar_grupo" />
+    <option name="LAST_COMMIT_MESSAGE" value="se agrega y se conecta en la vista principal el modulo buscar_grupo" />
   </component>
 </project>

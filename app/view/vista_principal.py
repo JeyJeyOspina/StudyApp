@@ -33,6 +33,7 @@ class VistaPrincipal:
         self.botones = [
             ("Ver Grupos de Estudio", self.ver_grupos),
             ("Crear Grupo de Estudio", self.crear_grupo),
+            ("Buscar Grupo", self.buscar_grupo),
             ("Ver Calendario", self.ver_calendario),
             ("Ver Planes de Estudio", self.ver_planes),
             ("Realizar Examen", self.realizar_examen),
