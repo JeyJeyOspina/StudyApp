@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Correción de la dirección del archivo json">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/study.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/study.py" afterDir="false" />
-    </list>
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se modifica el modulo vista_principal para conectarlo con vista_grupos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -418,7 +415,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730669201288</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Se crea el modulo vista_grupos">
+      <option name="closed" value="true" />
+      <created>1730670662320</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1730670662320</updated>
+    </task>
+    <task id="LOCAL-00029" summary="se modifica el modulo vista_principal para conectarlo con vista_grupos">
+      <option name="closed" value="true" />
+      <created>1730670944283</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1730670944283</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -448,8 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Start the console in main.py" />
-    <MESSAGE value="console and main implement" />
     <MESSAGE value="Se agrega el metodo inicializador de la clase Estudio y el metodo de resgistrar estudiante" />
     <MESSAGE value="Se agregan los metodos resgistrar e iniciar sesion de la calse estudiante" />
     <MESSAGE value="Se realizan correciones en los primeros 3 metodos de la clase Estudio" />
@@ -473,6 +484,8 @@
     <MESSAGE value="Se agrega la vista principal a la interfaz" />
     <MESSAGE value="Implementación de persistencia y patron Singleton en la clase Estudio" />
     <MESSAGE value="Correción de la dirección del archivo json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correción de la dirección del archivo json" />
+    <MESSAGE value="Se crea el modulo vista_grupos" />
+    <MESSAGE value="se modifica el modulo vista_principal para conectarlo con vista_grupos" />
+    <option name="LAST_COMMIT_MESSAGE" value="se modifica el modulo vista_principal para conectarlo con vista_grupos" />
   </component>
 </project>
