@@ -86,6 +86,34 @@ class PlanDeEstudio:
         self.universidad: str = universidad
         self.intensidad_semanal: int = intensidad_semanal
 
+class Examen:
+
+    def __init__(self, materia: str, tematica: str, numero_preguntas: int, preguntas: list[str],
+                 respuestas: list[str]):
+
+        self.materia: str = materia
+        self.tematica: str = tematica
+        self.numero_preguntas: int = numero_preguntas
+        self.preguntas: list[str] = preguntas
+        self.respuestas: list[str] = respuestas
+
+    def calcular_resultados(self, respuestas: list[str]):
+
+        numero_buenas: int = 0
+        preguntas_malas_con_respuestas_correctas: dict[str, str] = {}
+
+        for respuesta in range(self.numero_preguntas):
+            if respuestas[respuesta].lower() == self.respuestas[respuesta].lower():
+                numero_buenas += 1
+            else:
+                preguntas_malas_con_respuestas_correctas[self.preguntas[respuesta]] = self.respuestas[respuesta]
+
+        return numero_buenas, preguntas_malas_con_respuestas_correctas
+
+
+
+
+
 
 class Estudio:
 

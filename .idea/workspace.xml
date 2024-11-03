@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz">
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="actualizacion de version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/console.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/console.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/study.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/study.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +20,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/master" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="model/cristo" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,15 +52,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Casa/PycharmProjects/POOProjects/cli-painter-challenge&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "conexion-interfaz",
+    "last_opened_file_path": "C:/Users/Casa/PycharmProjects/POOProjects/cli-painter-challenge",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="StudyApp" />
@@ -232,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726760855773</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="actualizacion de version">
+      <option name="closed" value="true" />
+      <created>1730593553900</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730593553900</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,6 +274,7 @@
     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en la clase Estudio" />
     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en en la interfaz por consola" />
     <MESSAGE value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
-    <option name="LAST_COMMIT_MESSAGE" value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
+    <MESSAGE value="actualizacion de version" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizacion de version" />
   </component>
 </project>
