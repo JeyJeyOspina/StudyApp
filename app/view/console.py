@@ -22,9 +22,10 @@ class ConsoleView:
         print("5. Agregar un Evento al Grupo de Estudio")
         print("6. Buscar Plan de Estudio")
         print("7. Ingresar Grupo de Estudio")
-        print("8. Salir de la Aplicación")
+        print("8. Buscar Examen")
+        print("9. Salir de la Aplicación")
         option = int(input("Ingrese una Opción: "))
-        while option not in range(1, 9):
+        while option not in range(1, 10):
             print(">>> ERROR: Invalid option. Try again")
             option = int(input("Enter an option: "))
         return option
