@@ -1,11 +1,11 @@
 {
     "estudiantes": [
         {
-            "nombre": "a",
-            "correo": "a",
-            "id": 1,
-            "carrera": "a",
-            "semestre_actual": 1,
+            "nombre": "b",
+            "correo": "b",
+            "id": 2,
+            "carrera": "b",
+            "semestre_actual": 2,
             "grupos_pertenecientes": []
         }
     ],

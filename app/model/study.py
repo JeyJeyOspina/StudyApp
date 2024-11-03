@@ -142,7 +142,7 @@ class Estudio:
             self.cargar_datos()
 
     def guardar_datos(self):
-        """Guarda todos los datos en un archivo JSON"""
+        """Guardamos todos los datos en un archivo JSON"""
         datos = {
             'estudiantes': [
                 {
@@ -194,7 +194,7 @@ class Estudio:
             print(f"Error al guardar datos: {e}")
 
     def cargar_datos(self):
-        """Carga todos los datos desde el archivo JSON"""
+        """Cargamos todos los datos desde el archivo JSON"""
         if not os.path.exists(self.ruta_datos):
             return
 
