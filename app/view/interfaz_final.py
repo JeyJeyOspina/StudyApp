@@ -1,5 +1,8 @@
 import tkinter as tk
+from tkinter import messagebox
+
 from app.view.vista_inicial import VistaInicial
+from app.view.vista_principal import VistaPrincipal
 from app.view.vista_registro import VistaRegistro
 from app.view.vista_login import VistaLogin
 
@@ -18,8 +21,8 @@ class Aplicacion:
             self.vista_actual.destroy()
         self.vista_actual = VistaInicial(
             self.root,
-            self.mostrar_vista_registro,  # callback para registro
-            self.mostrar_vista_login  # callback para login
+            self.mostrar_vista_registro,
+            self.mostrar_vista_login
         )
 
     def mostrar_vista_registro(self):
@@ -33,13 +36,20 @@ class Aplicacion:
         self.vista_actual = VistaLogin(
             self.root,
             self.mostrar_vista_inicial,
-            self.login_exitoso
+            self.mostrar_vista_principal
         )
 
-    def login_exitoso(self):
-        # Aquí implementaremos la transición a la vista principal
-        # después de un inicio de sesión exitoso
-        pass
+    def mostrar_vista_principal(self):
+        if self.vista_actual:
+            self.vista_actual.destroy()
+        self.vista_actual = VistaPrincipal(
+            self.root,
+            self.cerrar_sesion
+        )
+
+    def cerrar_sesion(self):
+        if messagebox.askyesno("Cerrar Sesión", "¿Está seguro que desea cerrar sesión?"):
+            self.mostrar_vista_inicial()
 
     def ejecutar(self):
         self.root.mainloop()
