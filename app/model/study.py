@@ -27,10 +27,10 @@ class Calendario:
                 return True
         return False
 
-    def agregar_evento(self, titulo: str, año: int,mes: int, dia: int, hora: int = 0, duracion: int = 1,
+    def agregar_evento(self, titulo: str, year: int,mes: int, dia: int, hora: int = 0, duracion: int = 1,
                        ubicacion: str = "", detalles: str = "") -> bool:
         ahora: datetime = datetime.now()
-        fecha: datetime = datetime(año, mes, dia, hora)
+        fecha: datetime = datetime(year, mes, dia, hora)
         if fecha < ahora:
             print(">>> ERROR: No se puede agregar un evento en una fecha y hora pasada.")
             return False
@@ -109,11 +109,6 @@ class Examen:
                 preguntas_malas_con_respuestas_correctas[self.preguntas[respuesta]] = self.respuestas[respuesta]
 
         return numero_buenas, preguntas_malas_con_respuestas_correctas
-
-
-
-
-
 
 class Estudio:
 
