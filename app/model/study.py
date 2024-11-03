@@ -129,7 +129,7 @@ class Estudio:
         self.planes_de_estudio: list[PlanDeEstudio] = planes_de_estudio if planes_de_estudio is None else []
         self.calendario: Calendario = Calendario()
 
-    def registrar_estudiante(self, nombre: str, id: int, correo: str, carrera: str, semestre_actual: int):
+    def registrar_estudiante(self, nombre: str,correo: str, id: int,  carrera: str, semestre_actual: int):
         estudiantes_antes: int = len(self.estudiantes)
         self.estudiantes.append(Usuario(nombre, correo, id, carrera, semestre_actual))
         if estudiantes_antes < len(self.estudiantes):

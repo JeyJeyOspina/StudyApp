@@ -1,12 +1,15 @@
 import tkinter as tk
 from app.view.vista_inicial import VistaInicial
 from app.view.vista_registro import VistaRegistro
+from app.view.vista_login import VistaLogin
+
 
 class Aplicacion:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("Calendario de Eventos")
         self.root.geometry("400x300")
+        self.root.configure(bg="#003366") # Color de fondo azul oscuro
 
     def run(self):
         # Inicializar la vista inicial
@@ -21,8 +24,44 @@ class Aplicacion:
         self.vista_registro.destroy()  # Destruir la vista de registro
         self.vista_inicial = VistaInicial(self.root, self.cambiar_a_vista_registro)  # Reiniciar la vista inicial
 
+"""class Aplicacion:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.root.title("Study App")
+        self.root.geometry("800x600")
+        self.vista_actual = None
+        self.mostrar_vista_inicial()
 
+    def mostrar_vista_inicial(self):
+        if self.vista_actual:
+            self.vista_actual.destroy()
+        self.vista_actual = VistaInicial(
+            self.root,
+            self.mostrar_vista_registro,
+            self.mostrar_vista_login  # Añadimos este callback
+        )
 
+    def mostrar_vista_registro(self):
+        if self.vista_actual:
+            self.vista_actual.destroy()
+        self.vista_actual = VistaRegistro(self.root, self.mostrar_vista_inicial)
+
+    def mostrar_vista_login(self):
+        if self.vista_actual:
+            self.vista_actual.destroy()
+        self.vista_actual = VistaLogin(
+            self.root,
+            self.mostrar_vista_inicial,
+            self.login_exitoso
+        )
+
+    def login_exitoso(self):
+        # Aquí implementaremos la transición a la vista principal
+        # después de un inicio de sesión exitoso
+        pass
+
+    def ejecutar(self):
+        self.root.mainloop()"""
 
 """class Aplicacion:
     def __init__(self, root):
