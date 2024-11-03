@@ -1,6 +1,7 @@
 from datetime import datetime
 from app.model.study import Estudio
-from app.model.errors import EntradaInvalidaError, UsuarioNoEncontradoError, GrupoNoEncontradoError
+from app.model.errors import EntradaInvalidaError, UsuarioNoEncontradoError, GrupoNoEncontradoError, \
+    EventoFechaPasadaError
 
 
 class ConsoleView:
@@ -25,11 +26,15 @@ class ConsoleView:
         print("6. Buscar Plan de Estudio")
         print("7. Ingresar Grupo de Estudio")
         print("8. Salir de la Aplicación")
-        option = int(input("Ingrese una Opción: "))
-        while option not in range(1, 9):
-            print(">>> ERROR: Invalid option. Try again")
-            option = int(input("Enter an option: "))
-        return option
+        while True:
+            try:
+                option = int(input("Ingrese una Opción: "))
+                if option not in range(1, 9):
+                    return option
+                else:
+                    raise EntradaInvalidaError()
+            except ValueError:
+                print(">>> ERROR: Opción inválida. Intente de nuevo.")
 
     def app_loop(self):
         ConsoleView.show_welcome_msg()
@@ -95,72 +100,87 @@ class ConsoleView:
                 print(f"No se pudo agregar el evento '{titulo}'.")
         except ValueError:
             print(">>> ERROR: Formato de fecha/hora inválido. Intente de nuevo.")
+        except EventoFechaPasadaError as err:
+            print(err.mensaje)
 
     def crear_grupo_de_estudio(self):
-        print("\n=== CREAR GRUPO DE ESTUDIO ===\n")
-        nombre = input("Ingrese el nombre del Grupo: ")
-        tematica = input("Ingrese la materia de Estudio: ")
-        while True:
-            modalidad = input("Ingrese la modalidad de las Reuniones (Presencial o Virtual): ")
-            if modalidad.lower() in ["presencial", "virtual"]:
-                modalidad = modalidad.capitalize()
-                break
-            else:
-                print(">>> ERROR: Modalidad no válida. Por favor, ingrese 'Presencial' o 'Virtual'.")
+        try:
+            print("\n=== CREAR GRUPO DE ESTUDIO ===\n")
+            nombre = input("Ingrese el nombre del Grupo: ")
+            tematica = input("Ingrese la materia de Estudio: ")
+            while True:
+                modalidad = input("Ingrese la modalidad de las Reuniones (Presencial o Virtual): ")
+                if modalidad.lower() in ["presencial", "virtual"]:
+                    modalidad = modalidad.capitalize()
+                    break
+                else:
+                    print(">>> ERROR: Modalidad no válida. Por favor, ingrese 'Presencial' o 'Virtual'.")
 
-        while True:
-            horario_input = input("Ingrese el horario en el que desea el Grupo (formato HH:MM): ")
-            try:
-                horario = datetime.strptime(horario_input, "%H:%M").time()
-                break
-            except ValueError:
-                print("Formato de hora inválido. Por favor, intente de nuevo.")
-        resultado = self.estudio.registrar_grupo_de_estudio(nombre, tematica, modalidad, horario)
-        if resultado:
+            while True:
+                horario_input = input("Ingrese el horario en el que desea el Grupo (formato HH:MM): ")
+                try:
+                    horario = datetime.strptime(horario_input, "%H:%M").time()
+                    break
+                except ValueError:
+                    print("Formato de hora inválido. Por favor, intente de nuevo.")
+            self.estudio.registrar_grupo_de_estudio(nombre, tematica, modalidad, horario)
             print(f"Grupo {nombre} fue creado con Éxito")
-        else:
-            print(f"No fue posible crear el Grupo {nombre}")
+        except ValueError:
+            print(">>> ERROR: Opción inválida. Intente de nuevo.")
 
     def buscar_grupo_de_estudio(self):
-        print("=== BUSCAR GRUPO DE ESTUDIO ===")
-        tematica = input("Ingrese la temática que desea que tenga el Grupo: ")
-        while True:
-            modalidad = input("Ingrese la modalidad de las Reuniones (Presencial o Virtual): ")
-            if modalidad.lower() in ["presencial", "virtual"]:
-                modalidad = modalidad.capitalize()
-                break
-            else:
-                print(">>> ERROR: Modalidad no válida. Por favor, ingrese 'Presencial' o 'Virtual'.")
+        try:
+            print("=== BUSCAR GRUPO DE ESTUDIO ===")
+            tematica = input("Ingrese la temática que desea que tenga el Grupo: ")
+            while True:
+                modalidad = input("Ingrese la modalidad de las Reuniones (Presencial o Virtual): ")
+                if modalidad.lower() in ["presencial", "virtual"]:
+                    modalidad = modalidad.capitalize()
+                    break
+                else:
+                    print(">>> ERROR: Modalidad no válida. Por favor, ingrese 'Presencial' o 'Virtual'.")
 
-        while True:
-            horario_input = input("Ingrese el horario en el que desea el Grupo (formato HH:MM): ")
-            try:
-                horario = datetime.strptime(horario_input, "%H:%M").time()
-                break
-            except ValueError:
-                print("Formato de hora inválido. Por favor, intente de nuevo.")
+            while True:
+                horario_input = input("Ingrese el horario en el que desea el Grupo (formato HH:MM): ")
+                try:
+                    horario = datetime.strptime(horario_input, "%H:%M").time()
+                    break
+                except ValueError:
+                    print("Formato de hora inválido. Por favor, intente de nuevo.")
 
-        grupos_encontrados = self.estudio.buscar_grupo_de_estudio(tematica, modalidad, horario)
-        print(grupos_encontrados)
+            grupos_encontrados = self.estudio.buscar_grupo_de_estudio(tematica, modalidad, horario)
+            print(grupos_encontrados)
+        except GrupoNoEncontradoError as err:
+            print(err.mensaje)
 
     def agregar_evento_grupo_estudio(self):
-        print("\n=== AGREGAR EVENTO AL GRUPO DE ESTUDIO ===\n")
-        nombre_grupo = input("Ingrese el nombre del grupo al que desea agregar un evento: ")
-        tematica = input("Ingrese la temática del grupo: ")
-        modalidad = input("Ingrese la modalidad del grupo (Presencial o Virtual): ")
-        horario_input = input("Ingrese el horario del grupo (formato HH:MM): ")
-
         try:
-            horario = datetime.strptime(horario_input, "%H:%M").time()
-            grupo = self.estudio.buscar_grupo_de_estudio(tematica, modalidad, horario)
-        except ValueError:
-            print(">>> ERROR: Formato de fecha/hora inválido. Intente de nuevo.")
+            print("\n=== AGREGAR EVENTO AL GRUPO DE ESTUDIO ===\n")
+            nombre_grupo = input("Ingrese el nombre del grupo al que desea agregar un evento: ")
+            grupo = next((grupo for grupo in self.estudio.grupos_de_estudio if grupo.nombre == nombre_grupo), None)
+            if grupo is None:
+                print(f">>> ERROR: No se encontró el grupo {nombre_grupo}.")
+                return
+            titulo = input("Ingrese el título del evento: ")
+            fecha_input = input("Ingrese la fecha y hora del evento (formato YYYY-MM-DD HH:MM): ")
+            fecha = datetime.strptime(fecha_input, "%Y-%m-%d %H:%M")
+            duracion = int(input("Ingrese la duración en horas: "))
+            ubicacion = input("Ingrese la ubicación del evento: ")
+            detalles = input("Ingrese los detalles del evento: ")
+            grupo.agregar_evento_grupo_de_estudio(self.estudio.calendario, titulo, fecha, duracion,
+                                                                           ubicacion, detalles)
+            print(f"Evento '{titulo}' agregado con éxito al grupo '{nombre_grupo}'.")
+        except GrupoNoEncontradoError as err:
+            print(err.mensaje)
+        except EventoFechaPasadaError as err:
+            print(err.mensaje)
 
     def buscar_plan_estudio(self):
         print("\n=== BUSCAR PLAN DE ESTUDIO ===\n")
         materia = input("Ingrese la materia que desea buscar: ")
         planes = self.estudio.buscar_plan_de_estudio(materia)
         if planes:
+            print("Planes de estudio encontrados:\n")
             for plan in planes:
                 print(plan)
         else:

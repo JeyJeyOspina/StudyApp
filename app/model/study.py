@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta, time
 
+from app.model.errors import EventoFechaPasadaError, UsuarioNoEncontradoError, GrupoNoEncontradoError
+
 
 class Evento:
 
@@ -27,7 +29,8 @@ class Calendario:
                 return True
         return False
 
-    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 1, ubicacion: str = "", detalles: str = "") -> bool:
+    def agregar_evento(self, titulo: str, fecha: datetime, duracion: int = 1, ubicacion: str = "", detalles: str = "") \
+            -> bool:
         nuevo_evento = Evento(titulo, fecha, duracion, ubicacion, detalles)
         if fecha >= datetime.now():
             self.eventos.append(nuevo_evento)
@@ -50,15 +53,16 @@ class GrupoDeEstudio:
         self.horario: time = horario
         self.miembros: list[Usuario] = []
 
-    def agregar_evento_grupo_de_estudio(self, calendario: Calendario, titulo: str, fecha: datetime, duracion: int = 1,
+    @staticmethod
+    def agregar_evento_grupo_de_estudio(calendario: Calendario, titulo: str, fecha: datetime, duracion: int = 1,
                                         ubicacion: str = "", detalles: str = "") -> bool:
         if fecha < datetime.now():
             return False
 
-        evento_agregado = calendario.agregar_evento(titulo, fecha, duracion, ubicacion, detalles)
-        if evento_agregado:
-            return True
-        else:
+        try:
+            return calendario.agregar_evento(titulo, fecha, duracion, ubicacion, detalles)
+        except EventoFechaPasadaError as e:
+            print(e.mensaje)
             return False
 
     def __str__(self):
@@ -112,7 +116,7 @@ class Estudio:
         for estudiante in self.estudiantes:
             if estudiante.correo == correo and estudiante.id == contra:
                 return True
-        return False
+        raise UsuarioNoEncontradoError(correo)
 
     def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: time) -> bool:
         grupos_antes: int = len(self.grupos_de_estudio)
@@ -125,15 +129,10 @@ class Estudio:
         for grupo in self.grupos_de_estudio:
             if grupo.tematica == tematica and grupo.modalidad == modalidad and grupo.horario == horario:
                 return grupo
-        return (f"No hay grupos disponibles con tematica de {tematica}, "
-                f"modalidad {modalidad} ni con horario {horario}")
+        raise GrupoNoEncontradoError(tematica)
 
     def buscar_plan_de_estudio(self, materia: str) -> list[PlanDeEstudio]:
-        planes_por_materia: list[PlanDeEstudio] = []
-        for plan_de_estudio in self.planes_de_estudio:
-            if plan_de_estudio.materia == materia:
-                planes_por_materia.append(plan_de_estudio)
-        return planes_por_materia
+        return [plan for plan in self.planes_de_estudio if plan.materia == materia]
 
     def registrar_nuevo_miembro(self, nombre: str, estudiante: Usuario) -> bool:
         for grupo in self.grupos_de_estudio:
