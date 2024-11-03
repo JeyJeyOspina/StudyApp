@@ -31,7 +31,6 @@ class Calendario:
         nuevo_evento = Evento(titulo, fecha, duracion, ubicacion, detalles)
         if fecha >= datetime.now():
             self.eventos.append(nuevo_evento)
-            print(f"Evento '{titulo}' agregado con éxito.")
             return True
         return False
 
@@ -50,6 +49,17 @@ class GrupoDeEstudio:
         self.modalidad: str = modalidad
         self.horario: time = horario
         self.miembros: list[Usuario] = []
+
+    def agregar_evento_grupo_de_estudio(self, calendario: Calendario, titulo: str, fecha: datetime, duracion: int = 1,
+                                        ubicacion: str = "", detalles: str = "") -> bool:
+        if fecha < datetime.now():
+            return False
+
+        evento_agregado = calendario.agregar_evento(titulo, fecha, duracion, ubicacion, detalles)
+        if evento_agregado:
+            return True
+        else:
+            return False
 
     def __str__(self):
         return (f"Nombre: {self.nombre}, Tematica: {self.tematica}, "
@@ -104,7 +114,6 @@ class Estudio:
                 return True
         return False
 
-    # Hace parte del R4 que aún no tiene la descomposición corregida
     def registrar_grupo_de_estudio(self, nombre: str, tematica: str, modalidad: str, horario: time) -> bool:
         grupos_antes: int = len(self.grupos_de_estudio)
         self.grupos_de_estudio.append(GrupoDeEstudio(nombre, tematica, modalidad, horario))
@@ -112,16 +121,12 @@ class Estudio:
             return True
         return False
 
-    def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: time) -> list[str] | str:
-        grupos_encontrados: list[GrupoDeEstudio] = []
+    def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: time) -> GrupoDeEstudio | str:
         for grupo in self.grupos_de_estudio:
             if grupo.tematica == tematica and grupo.modalidad == modalidad and grupo.horario == horario:
-                grupos_encontrados.append(grupo)
-        if len(grupos_encontrados) != 0:
-            return [str(grupo) for grupo in grupos_encontrados]
-        else:
-            return (f"No hay grupos disponibles con tematica de {tematica}, "
-                    f"modalidad {modalidad} ni con horario {horario}")
+                return grupo
+        return (f"No hay grupos disponibles con tematica de {tematica}, "
+                f"modalidad {modalidad} ni con horario {horario}")
 
     def buscar_plan_de_estudio(self, materia: str) -> list[PlanDeEstudio]:
         planes_por_materia: list[PlanDeEstudio] = []
@@ -135,12 +140,8 @@ class Estudio:
             if grupo.nombre == nombre:
                 if estudiante in grupo.miembros:
                     return False
-                miembros_antes = len(grupo.miembros)
                 grupo.miembros.append(estudiante)
-                miembros_actual = len(grupo.miembros)
-                if miembros_antes < miembros_actual:
-                    return True
-                return False
+                return True
         return False
 
     def registrar_grupo_a_estudiante(self, estudiante: Usuario, nombre_grupo: str) -> bool:
@@ -151,9 +152,7 @@ class Estudio:
                     estudiante.grupos_pertenecientes.append(grupo)
                     return True
                 else:
-                    print(f"El estudiante {estudiante.nombre} ya pertenece al grupo {nombre_grupo}.")
                     return False
-        print(f"Grupo de estudio '{nombre_grupo}' no encontrado.")
         return False
 
     def plan_de_estudio_universidad(self, materia: str, universidad: str) -> PlanDeEstudio | None:
