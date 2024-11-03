@@ -2,10 +2,11 @@ import tkinter as tk
 from tkinter import ttk
 
 class VistaInicial:
-    def __init__(self, root, callback_registro):
+    def __init__(self, root, callback_registro, callback_login):
         self.root = root
         self.frame = tk.Frame(self.root, bg="#003366")
         self.frame.pack(expand=True, padx=20, pady=20)
+        self.callback_login = callback_login
 
         # Título
         self.titulo = tk.Label(self.frame, text="Bienvenido a Study App", font=("Arial", 16), bg="#003366", fg="white")
@@ -20,17 +21,12 @@ class VistaInicial:
         self.boton_registrarse.pack(pady=10, fill='x')
 
     def iniciar_sesion(self):
-        print("Iniciar sesión clicado")
+        self.callback_login()
 
     def destroy(self):
         self.frame.destroy()  # Destruir el marco de la vista inicial.
-"""class VistaInicial:
-    def __init__(self, root, callback_registro, callback_login):
-        self.root = root
-        self.frame = tk.Frame(self.root, bg="#003366")
-        self.root.configure(bg="#f0f0f0")
-        self.frame.pack(expand=True, padx=20, pady=20)
 
+"""     self.root.configure(bg="#f0f0f0")
         # Agregar estilos consistentes
         self.button_style = {'font': ('Arial', 12), 'width': 20, 'pady': 5}
 
