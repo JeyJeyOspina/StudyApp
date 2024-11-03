@@ -1,0 +1,101 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0f203638-88d9-4fdf-a9b2-3d9dc0206497\" name=\"Changes\" comment=\"se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz\">\r\n      <change beforePath=\"$PROJECT_DIR$/app/model/study.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/model/study.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/view/console.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/view/console.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;JeyJeyOspina&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/JeyJeyOspina/StudyApp.git&quot;,\r\n    &quot;accountId&quot;: &quot;971a96a5-8520-496d-9999-93c1f456dbb0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2m7iP49M6YUNrTRBPUdAvvvfOnh\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Python.main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Casa/PycharmProjects/POOProjects/cli-painter-challenge&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"StudyApp\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/app\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/app/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0f203638-88d9-4fdf-a9b2-3d9dc0206497\" name=\"Changes\" comment=\"\" />\r\n      <created>1726433987805</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1726433987805</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Create the estructure of Project\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726601137592</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726601137592</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Create the classes Evento, Calendario and GrupoDeEstudio\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726604403877</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726604403877</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Start the console in main.py\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726606207354</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726606207354</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"console and main implement\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726609609651</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726609609651</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Se agrega el metodo inicializador de la clase Estudio y el metodo de resgistrar estudiante\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726611831075</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726611831075</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Se agregan los metodos resgistrar e iniciar sesion de la calse estudiante\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726616231619</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726616231619</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Se realizan correciones en los primeros 3 metodos de la clase Estudio\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726616858155</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726616858155</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Se cambia el tipo de parametro de la calse Estudio\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726625485884</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726625485884</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Se corrige el metodo de iniciar sesión y se comenta el metódo que filtra los planes de estudio por Universidad\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726626000518</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726626000518</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Se empieza a crear la clase ConsoleView para la capa de interfaz con el ususario, creando los metodos mensaje de bienvenida, mostrar mensaje y app en bucle\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726629149652</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726629149652</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Se agregaron los encabezados de los metodos necesarios para la interfaz y se definio el metodo crear_grupo_de_estudio\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726632116923</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726632116923</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Mejora del metodo crear_grupo_de_estudio clase ConsoleView\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726632284133</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726632284133</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"se dejó empezado el metódo de buscar_grupo_de_estudio de ConsoleView\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726633313813</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726633313813</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Se agrega el metodo buscar_grupo_de_estudio en la clase Estudio\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726759167654</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726759167655</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"Se agrega el metodo buscar_grupo_de_estudio en en la interfaz por consola\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726760010947</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726760010947</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1726760855773</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1726760855773</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"17\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Create the estructure of Project\" />\r\n    <MESSAGE value=\"Create the classes Evento, Calendario and GrupoDeEstudio\" />\r\n    <MESSAGE value=\"Start the console in main.py\" />\r\n    <MESSAGE value=\"console and main implement\" />\r\n    <MESSAGE value=\"Se agrega el metodo inicializador de la clase Estudio y el metodo de resgistrar estudiante\" />\r\n    <MESSAGE value=\"Se agregan los metodos resgistrar e iniciar sesion de la calse estudiante\" />\r\n    <MESSAGE value=\"Se realizan correciones en los primeros 3 metodos de la clase Estudio\" />\r\n    <MESSAGE value=\"Se cambia el tipo de parametro de la calse Estudio\" />\r\n    <MESSAGE value=\"Se corrige el metodo de iniciar sesión y se comenta el metódo que filtra los planes de estudio por Universidad\" />\r\n    <MESSAGE value=\"Se empieza a crear la clase ConsoleView para la capa de interfaz con el ususario, creando los metodos mensaje de bienvenida, mostrar mensaje y app en bucle\" />\r\n    <MESSAGE value=\"Se agregaron los encabezados de los metodos necesarios para la interfaz y se definio el metodo crear_grupo_de_estudio\" />\r\n    <MESSAGE value=\"Mejora del metodo crear_grupo_de_estudio clase ConsoleView\" />\r\n    <MESSAGE value=\"se dejó empezado el metódo de buscar_grupo_de_estudio de ConsoleView\" />\r\n    <MESSAGE value=\"Se agrega el metodo buscar_grupo_de_estudio en la clase Estudio\" />\r\n    <MESSAGE value=\"Se agrega el metodo buscar_grupo_de_estudio en en la interfaz por consola\" />\r\n    <MESSAGE value=\"se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1068ad4c5154e337502f050cfe5ba93d33bfa74b)
++++ b/.idea/workspace.xml	(date 1730599859345)
+@@ -4,9 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz">
++    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="actualizacion de version">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/model/study.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/study.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/view/console.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/console.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -19,8 +19,16 @@
+         <option value="Python Script" />
+       </list>
+     </option>
++  </component>
++  <component name="Git.Merge.Settings">
++    <option name="BRANCH" value="origin/master" />
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+@@ -48,7 +56,7 @@
+   &quot;keyToString&quot;: {
+     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;conexion-interfaz&quot;,
+     &quot;last_opened_file_path&quot;: &quot;C:/Users/Casa/PycharmProjects/POOProjects/cli-painter-challenge&quot;,
+     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
+   }
+@@ -79,6 +87,7 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Python.main" />
++        <item itemvalue="Python.main" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -226,10 +235,33 @@
+       <option name="project" value="LOCAL" />
+       <updated>1726760855773</updated>
+     </task>
+-    <option name="localTasksCounter" value="17" />
++    <task id="LOCAL-00017" summary="actualizacion de version">
++      <option name="closed" value="true" />
++      <created>1730593553900</created>
++      <option name="number" value="00017" />
++      <option name="presentableId" value="LOCAL-00017" />
++      <option name="project" value="LOCAL" />
++      <updated>1730593553900</updated>
++    </task>
++    <option name="localTasksCounter" value="18" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
++    <option name="RECENT_FILTERS">
++      <map>
++        <entry key="Branch">
++          <value>
++            <list>
++              <RecentGroup>
++                <option name="FILTER_VALUES">
++                  <option value="origin/conexion-interfaz" />
++                </option>
++              </RecentGroup>
++            </list>
++          </value>
++        </entry>
++      </map>
++    </option>
+     <option name="TAB_STATES">
+       <map>
+         <entry key="MAIN">
+@@ -257,6 +289,7 @@
+     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en la clase Estudio" />
+     <MESSAGE value="Se agrega el metodo buscar_grupo_de_estudio en en la interfaz por consola" />
+     <MESSAGE value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
+-    <option name="LAST_COMMIT_MESSAGE" value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
++    <MESSAGE value="actualizacion de version" />
++    <option name="LAST_COMMIT_MESSAGE" value="actualizacion de version" />
+   </component>
+ </project>
+\ No newline at end of file

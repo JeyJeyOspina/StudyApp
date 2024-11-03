@@ -38,11 +38,6 @@ class Calendario:
 
     def eventos_del_tiempo(self, dias: int) -> list[Evento]:
         ahora = datetime.now()
-        eventos_en_tiempo = []
-        for evento in self.eventos:
-            if ahora <= evento.fecha <= ahora + timedelta(days=dias):
-                eventos_en_tiempo.append(evento)
-        return eventos_en_tiempo if eventos_en_tiempo else ["No hay eventos próximos en el periodo indicado."]
         limite = ahora + timedelta(days=dias)
         eventos_proximos = [evento for evento in self.eventos if ahora <= evento.fecha < limite]
         return eventos_proximos
