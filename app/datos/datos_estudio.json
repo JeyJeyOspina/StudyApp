@@ -7,6 +7,14 @@
             "carrera": "b",
             "semestre_actual": 2,
             "grupos_pertenecientes": []
+        },
+        {
+            "nombre": "a",
+            "correo": "a",
+            "id": 1,
+            "carrera": "a",
+            "semestre_actual": 1,
+            "grupos_pertenecientes": []
         }
     ],
     "grupos_de_estudio": [
