@@ -8,8 +8,7 @@ class VistaLogin:
         self.root = root
         self.estudio = Estudio()
         self.callback_login_exitoso = callback_login_exitoso
-        self.usuario: Usuario = Usuario("x","x",2,"x",2)
-
+        self.usuario: Usuario = None
         self.label_style = {'bg': "#003366", 'fg': "white", 'font': ('Arial', 11)}
         self.entry_style = {'width': 30}
 
@@ -100,7 +99,7 @@ class VistaLogin:
             if self.estudio.iniciar_sesion(correo, id):
                 messagebox.showinfo("Éxito", "Inicio de sesión exitoso")
                 self.usuario = self.estudio.iniciar_sesion(correo, id)
-                self.callback_login_exitoso()
+                self.callback_login_exitoso(self.usuario)
             else:
                 messagebox.showerror("Error", "Correo o ID incorrectos")
         except ValueError:

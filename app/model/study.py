@@ -64,6 +64,7 @@ class GrupoDeEstudio:
 
         evento_agregado = calendario.agregar_evento(titulo, year, mes, dia, hora, duracion, ubicacion, detalles)
         if evento_agregado:
+
             return True
         else:
             return False

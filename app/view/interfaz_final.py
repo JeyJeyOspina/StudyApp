@@ -39,12 +39,12 @@ class Aplicacion:
             self.mostrar_vista_principal
         )
 
-    def mostrar_vista_principal(self):
+    def mostrar_vista_principal(self, usuario):
         if self.vista_actual:
             self.vista_actual.destroy()
         self.vista_actual = VistaPrincipal(
             self.root,
-            self.cerrar_sesion
+            self.cerrar_sesion, usuario
         )
 
     def cerrar_sesion(self):

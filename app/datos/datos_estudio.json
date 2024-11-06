@@ -14,7 +14,9 @@
             "id": 1,
             "carrera": "a",
             "semestre_actual": 1,
-            "grupos_pertenecientes": []
+            "grupos_pertenecientes": [
+                "Grupo1"
+            ]
         }
     ],
     "grupos_de_estudio": [
@@ -23,7 +25,9 @@
             "tematica": "F\u00edsica",
             "modalidad": "Presencial",
             "horario": "10:00:00",
-            "miembros": []
+            "miembros": [
+                "a"
+            ]
         },
         {
             "nombre": "Grupo2",

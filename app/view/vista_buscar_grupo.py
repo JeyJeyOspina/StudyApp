@@ -4,7 +4,7 @@ from app.model.study import Estudio, GrupoDeEstudio
 
 
 class VistaBuscarGrupos:
-    def __init__(self, root, callback_volver, usuario_actual=None):
+    def __init__(self, root, callback_volver, usuario_actual):
         self.root = root
         self.estudio = Estudio()
         self.callback_volver = callback_volver

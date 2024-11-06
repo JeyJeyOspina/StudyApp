@@ -4,9 +4,10 @@ from tkinter import messagebox
 
 
 class VistaPrincipal:
-    def __init__(self, root, callback_cerrar_sesion):
+    def __init__(self, root, callback_cerrar_sesion, usuario):
         self.root = root
         self.callback_cerrar_sesion = callback_cerrar_sesion
+        self.usuario = usuario
 
         # Frame principal
         self.frame = tk.Frame(self.root, bg="#003366")
@@ -65,7 +66,8 @@ class VistaPrincipal:
     def buscar_grupo(self):
         self.frame.pack_forget()
         from app.view.vista_buscar_grupo import VistaBuscarGrupos
-        VistaBuscarGrupos(self.root, self.mostrar_vista_principal)
+        VistaBuscarGrupos(self.root, self.mostrar_vista_principal, self.usuario)
+
 
     def ver_calendario(self):
         # Implementar vista del calendario
