@@ -88,6 +88,9 @@ class Usuario:
             return False
         return True
 
+    def __str__(self):
+        return f"Nombre: {self.nombre.upper()}, Carrera: {self.carrera.upper()} , Usuario: {self.id} "
+
 
 class PlanDeEstudio:
 
