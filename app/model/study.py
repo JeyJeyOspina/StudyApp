@@ -1,7 +1,7 @@
 import json
 import os
 from datetime import datetime, timedelta, time
-from typing import Dict, Any
+
 
 class Evento:
 
@@ -122,7 +122,7 @@ class Examen:
 
 
 class Estudio:
-    _instancia = None
+    _instancia: "Estudio" = None
 
     def __new__(cls):
         if cls._instancia is None:

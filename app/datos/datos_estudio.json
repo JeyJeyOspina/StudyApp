@@ -24,6 +24,13 @@
             "modalidad": "Presencial",
             "horario": "10:00:00",
             "miembros": []
+        },
+        {
+            "nombre": "Grupo2",
+            "tematica": "C\u00e1lculos",
+            "modalidad": "Presencial",
+            "horario": "08:00:00",
+            "miembros": []
         }
     ],
     "planes_de_estudio": [],
