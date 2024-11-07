@@ -1,24 +1,18 @@
 import tkinter as tk
-from tkinter import Button, Label, Listbox, Toplevel, Entry, messagebox
+from tkinter import messagebox
+from tkinter.ttk import Label, Button, Entry
+
 from app.model.study import Estudio, Calendario
 
 
 class VistaVerCalendario:
     def __init__(self, master, usuario, callback_volver):
-        self.crear_interfaz()
         self.master = master
         self.usuario = usuario
         self.callback_volver = callback_volver
         self.study = Estudio()  # Instancia de Estudio para manejar eventos
-        self.calendario = Calendario()
-
-        # Definición de los elementos de la interfaz
-        self.entrada_dias = None
-        self.btn_ver_eventos = None
-        self.btn_agregar_evento = None
-        self.lista_eventos = None
-        self.eventos_mostrados = []  # Atributo para guardar los eventos mostrados actualmente
-
+        self.calendario = Calendario()  # Instancia de Calendario para manejar eventos
+        self.crear_interfaz()
 
     def crear_interfaz(self):
         # Frame principal del calendario
@@ -29,13 +23,11 @@ class VistaVerCalendario:
         Label(
             self.frame,
             text=f"Calendario de {self.usuario.nombre}",
-            font=("Arial", 20, "bold"),
-            bg="#003366",
-            fg="white"
+            font=("Arial", 20, "bold")
         ).pack(pady=20)
 
         # Entrada para elegir días
-        Label(self.frame, text="Ver eventos de los próximos X días:", bg="#003366", fg="white").pack()
+        Label(self.frame, text="Ver eventos de los próximos X días:").pack()
         self.entrada_dias = Entry(self.frame)
         self.entrada_dias.pack()
 
@@ -48,7 +40,7 @@ class VistaVerCalendario:
         self.btn_agregar_evento.pack()
 
         # Listbox para mostrar eventos y configurar selección de eventos
-        self.lista_eventos = Listbox(self.frame)
+        self.lista_eventos = tk.Listbox(self.frame)
         self.lista_eventos.pack()
         self.lista_eventos.bind("<<ListboxSelect>>", self.mostrar_detalle_evento)
 
@@ -57,8 +49,6 @@ class VistaVerCalendario:
             self.frame,
             text="Volver",
             command=self.volver,
-            bg="#005580",
-            fg="white",
             width=20
         )
         self.btn_volver.pack(pady=20)
@@ -72,6 +62,8 @@ class VistaVerCalendario:
 
         self.lista_eventos.delete(0, 'end')
         self.eventos_mostrados = self.calendario.eventos_del_tiempo(dias)
+        if not self.eventos_mostrados:
+            messagebox.showinfo("Sin eventos", "No hay eventos para los próximos días.")
         for i, evento in enumerate(self.eventos_mostrados):
             self.lista_eventos.insert('end', f"{evento.titulo} - {evento.fecha}")
 
@@ -81,7 +73,7 @@ class VistaVerCalendario:
             index = seleccion[0]
             evento_seleccionado = self.eventos_mostrados[index]
 
-            ventana_detalle = Toplevel(self.master)
+            ventana_detalle = tk.Toplevel(self.master)
             ventana_detalle.title("Detalles del Evento")
 
             Label(ventana_detalle, text=f"Título: {evento_seleccionado.titulo}").pack()
@@ -89,7 +81,7 @@ class VistaVerCalendario:
             Label(ventana_detalle, text=f"Detalles: {evento_seleccionado.detalles}").pack()
 
     def ventana_agregar_evento(self):
-        ventana = Toplevel(self.master)
+        ventana = tk.Toplevel(self.master)
         ventana.title("Agregar Evento")
 
         Label(ventana, text="Título del Evento:").pack()
