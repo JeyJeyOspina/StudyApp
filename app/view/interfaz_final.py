@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
+from app.model.study import Estudio
 from app.view.vista_inicial import VistaInicial
 from app.view.vista_principal import VistaPrincipal
 from app.view.vista_registro import VistaRegistro
@@ -44,7 +45,7 @@ class Aplicacion:
             self.vista_actual.destroy()
         self.vista_actual = VistaPrincipal(
             self.root,
-            self.cerrar_sesion, usuario
+            self.cerrar_sesion, usuario,Estudio()
         )
 
     def cerrar_sesion(self):

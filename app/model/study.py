@@ -1,10 +1,9 @@
 import json
 import os
 from datetime import datetime, timedelta, time
-
+from typing import List, Dict, Optional
 
 class Evento:
-
     def __init__(self, titulo: str, year: int, mes: int, dia: int, hora: int, duracion: int = 0,
                  ubicacion: str = "", detalles: str = ""):
         self.titulo: str = titulo
@@ -18,106 +17,81 @@ class Evento:
                 f"Duración: {self.duracion} horas, Ubicación: {self.ubicacion}, "
                 f"Detalles: {self.detalles}")
 
-
 class Calendario:
-
     def __init__(self):
-        self.eventos: list[Evento] = []
+        self.eventos: List[Evento] = []
 
     def verificar_evento(self, titulo: str) -> bool:
-        for evento in self.eventos:
-            if evento.titulo == titulo:
-                return True
-        return False
+        return any(evento.titulo == titulo for evento in self.eventos)
 
     def agregar_evento(self, titulo: str, year: int, mes: int, dia: int, hora: int = 0, duracion: int = 1,
                        ubicacion: str = "", detalles: str = "") -> bool:
         fecha: datetime = datetime(year, mes, dia, hora)
-        nuevo_evento = Evento(titulo, year, mes, dia, hora, duracion, ubicacion, detalles)
         if fecha >= datetime.now():
+            nuevo_evento = Evento(titulo, year, mes, dia, hora, duracion, ubicacion, detalles)
             self.eventos.append(nuevo_evento)
             return True
         return False
 
-    def eventos_del_tiempo(self, dias: int) -> list[Evento]:
+    def eventos_del_tiempo(self, dias: int) -> List[Evento]:
         ahora = datetime.now()
         limite = ahora + timedelta(days=dias)
-        eventos_proximos = [evento for evento in self.eventos if ahora <= evento.fecha < limite]
-        return eventos_proximos
-
+        return [evento for evento in self.eventos if ahora <= evento.fecha < limite]
 
 class GrupoDeEstudio:
-
     def __init__(self, nombre: str, tematica: str, modalidad: str, horario: time):
         self.nombre: str = nombre
         self.tematica: str = tematica
         self.modalidad: str = modalidad
         self.horario: time = horario
-        self.miembros: list[Usuario] = []
+        self.miembros: List['Usuario'] = []
 
     def agregar_evento_grupo_de_estudio(self, calendario: Calendario, titulo: str, year: int, mes: int, dia: int,
                                         hora: int = 0, duracion: int = 0,
                                         ubicacion: str = "", detalles: str = "") -> bool:
-
         fecha: datetime = datetime(year, mes, dia, hora)
         if fecha < datetime.now():
             return False
-
-        evento_agregado = calendario.agregar_evento(titulo, year, mes, dia, hora, duracion, ubicacion, detalles)
-        if evento_agregado:
-
-            return True
-        else:
-            return False
+        return calendario.agregar_evento(titulo, year, mes, dia, hora, duracion, ubicacion, detalles)
 
     def __str__(self):
-        return (f"Nombre: {self.nombre}, Tematica: {self.tematica}, "
+        return (f"Nombre: { self.nombre}, Tematica: {self.tematica}, "
                 f"Modalidad: {self.modalidad}, Horario: {self.horario}")
 
-
 class Usuario:
-
     def __init__(self, nombre: str, correo: str, id: int, carrera: str, semestre_actual: int):
         self.nombre: str = nombre
         self.correo: str = correo
         self.id: int = id
         self.carrera: str = carrera
         self.semestre_actual: int = semestre_actual
-        self.grupos_pertenecientes: list[GrupoDeEstudio] = []
-        self.calendario: list[Calendario] = []
+        self.grupos_pertenecientes: List[GrupoDeEstudio] = []
+        self.calendario: List[Calendario] = []
 
     def pertenece_a_almenos_un_grupo(self) -> bool:
-        if len(self.grupos_pertenecientes) == 0:
-            return False
-        return True
+        return len(self.grupos_pertenecientes) > 0
 
     def __str__(self):
         return f"Nombre: {self.nombre.upper()}, Carrera: {self.carrera.upper()} , Usuario: {self.id} "
 
-
 class PlanDeEstudio:
-
     def __init__(self, materia: str, universidad: str, intensidad_semanal: int):
         self.materia: str = materia
         self.universidad: str = universidad
         self.intensidad_semanal: int = intensidad_semanal
 
-
 class Examen:
-
-    def __init__(self, materia: str, tematica: str, numero_preguntas: int, preguntas: list[str],
-                 respuestas: list[str]):
-
+    def __init__(self, materia: str, tematica: str, numero_preguntas: int, preguntas: List[str],
+                 respuestas: List[str]):
         self.materia: str = materia
         self.tematica: str = tematica
         self.numero_preguntas: int = numero_preguntas
-        self.preguntas: list[str] = preguntas
-        self.respuestas: list[str] = respuestas
+        self.preguntas: List[str] = preguntas
+        self.respuestas: List[str] = respuestas
 
-    def calcular_resultados(self, respuestas: list[str]):
-
+    def calcular_resultados(self, respuestas: List[str]) -> tuple:
         numero_buenas: int = 0
-        preguntas_malas_con_respuestas_correctas: dict[str, str] = {}
+        preguntas_malas_con_respuestas_correctas: Dict[str, str] = {}
 
         for respuesta in range(self.numero_preguntas):
             if respuestas[respuesta].lower() == self.respuestas[respuesta].lower():
@@ -127,6 +101,23 @@ class Examen:
 
         return numero_buenas, preguntas_malas_con_respuestas_correctas
 
+    @staticmethod
+    def crear_examen_ejemplo() -> 'Examen':
+        preguntas = [
+            "¿Cuál es la capital de Francia?",
+            "¿Cuánto es 2 + 2?",
+            "¿Cuál es el océano más grande del mundo?",
+            "¿Quién escribió 'Cien años de soledad'?",
+            "¿Cuál es la fórmula química del agua?"
+        ]
+        respuestas = [
+            "París",
+            "4",
+            "Pacífico",
+            "Gabriel García Márquez",
+            "H2O"
+        ]
+        return Examen("Geografía", "General", len(preguntas), preguntas, respuestas)
 
 class Estudio:
     _instancia: "Estudio" = None
@@ -139,14 +130,18 @@ class Estudio:
 
     def __init__(self):
         if not self._inicializado:
-            self.estudiantes: list[Usuario] = []
-            self.grupos_de_estudio: list[GrupoDeEstudio] = []
-            self.planes_de_estudio: list[PlanDeEstudio] = []
+            self.estudiantes: List[Usuario] = []
+            self.grupos_de_estudio: List[GrupoDeEstudio] = []
+            self.planes_de_estudio: List[PlanDeEstudio] = []
             self.calendario: Calendario = Calendario()
-            self._inicializado = True
+            self.examenes: List[Examen] = []
             self.ruta_datos = os.path.join('datos', 'datos_estudio.json')
             os.makedirs(os.path.dirname(self.ruta_datos), exist_ok=True)
             self.cargar_datos()
+            self.cargar_examenes()
+            self.examenes.append(Examen.crear_examen_ejemplo())
+            self.guardar_datos()
+            self._inicializado = True
 
     def guardar_datos(self):
         """Guardamos todos los datos en un archivo JSON"""
@@ -191,13 +186,23 @@ class Estudio:
                     }
                     for evento in self.calendario.eventos
                 ]
-            }
+            },
+            'examenes': [
+                {
+                    'materia': examen.materia,
+                    'tematica': examen.tematica,
+                    'numero_preguntas': examen.numero_preguntas,
+                    'preguntas': examen.preguntas,
+                    'respuestas': examen.respuestas
+                }
+                for examen in self.examenes
+            ]
         }
 
         try:
             with open(self.ruta_datos, 'w') as archivo:
                 json.dump(datos, archivo, indent=4)
-        except Exception as e:
+        except IOError as e:
             print(f"Error al guardar datos: {e}")
 
     def cargar_datos(self):
@@ -271,8 +276,35 @@ class Estudio:
                 )
                 self.calendario.eventos.append(evento)
 
-        except Exception as e:
+        except IOError as e:
             print(f"Error al cargar datos: {e}")
+
+    def cargar_examenes(self):
+        """Cargamos todos los exámenes desde el archivo JSON"""
+        if not os.path.exists(self.ruta_datos):
+            return
+
+        try:
+            with open(self.ruta_datos, 'r') as archivo:
+                datos = json.load(archivo)
+
+            # Cargar exámenes
+            for examen_data in datos.get('examenes', []):
+                examen = Examen(
+                    examen_data['materia'],
+                    examen_data['tematica'],
+                    examen_data['numero_preguntas'],  # Corrección aquí
+                    examen_data['preguntas'],
+                    examen_data['respuestas']
+                )
+                self.examenes.append(examen)
+
+        except IOError as e:
+            print(f"Error al cargar datos de exámenes: {e}")
+
+    def agregar_examen(self, examen: Examen):
+        self.examenes.append(examen)
+        self.guardar_datos()
 
     def registrar_estudiante(self, nombre: str, correo: str, id: int, carrera: str, semestre_actual: int) -> bool:
         estudiantes_antes = len(self.estudiantes)
@@ -283,7 +315,7 @@ class Estudio:
             return True
         return False
 
-    def iniciar_sesion(self, correo: str, clave: int) -> Usuario | None:
+    def iniciar_sesion(self, correo: str, clave: int) -> Optional[Usuario]:
         for estudiante in self.estudiantes:
             if estudiante.correo == correo and estudiante.id == clave:
                 return estudiante
@@ -298,14 +330,13 @@ class Estudio:
             return True
         return False
 
-    def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: time) -> GrupoDeEstudio | str:
+    def buscar_grupo_de_estudio(self, tematica: str, modalidad: str, horario: time) -> Optional[GrupoDeEstudio]:
         for grupo in self.grupos_de_estudio:
             if grupo.tematica == tematica and grupo.modalidad == modalidad and grupo.horario == horario:
                 return grupo
-        return (f"No hay grupos disponibles con tematica de {tematica}, "
-                f"modalidad {modalidad} ni con horario {horario}")
+        return None
 
-    def buscar_plan_de_estudio(self, materia: str) -> list[PlanDeEstudio]:
+    def buscar_plan_de_estudio(self, materia: str) -> List[PlanDeEstudio]:
         return [plan for plan in self.planes_de_estudio if plan.materia == materia]
 
     def registrar_nuevo_miembro(self, nombre_grupo: str, estudiante: Usuario) -> bool:
@@ -329,7 +360,7 @@ class Estudio:
                 return False
         return False
 
-    def plan_de_estudio_universidad(self, materia: str, universidad: str) -> PlanDeEstudio | None:
+    def plan_de_estudio_universidad(self, materia: str, universidad: str) -> Optional[PlanDeEstudio]:
         for plan_de_estudio in self.planes_de_estudio:
             if plan_de_estudio.materia == materia and plan_de_estudio.universidad == universidad:
                 return plan_de_estudio

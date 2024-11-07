@@ -40,5 +40,83 @@
     "planes_de_estudio": [],
     "calendario": {
         "eventos": []
-    }
+    },
+    "examenes": [
+        {
+            "materia": "Geograf\u00eda",
+            "tematica": "General",
+            "numero_preguntas": 5,
+            "preguntas": [
+                "\u00bfCu\u00e1l es la capital de Francia?",
+                "\u00bfCu\u00e1nto es 2 + 2?",
+                "\u00bfCu\u00e1l es el oc\u00e9ano m\u00e1s grande del mundo?",
+                "\u00bfQui\u00e9n escribi\u00f3 'Cien a\u00f1os de soledad'?",
+                "\u00bfCu\u00e1l es la f\u00f3rmula qu\u00edmica del agua?"
+            ],
+            "respuestas": [
+                "Par\u00eds",
+                "4",
+                "Pac\u00edfico",
+                "Gabriel Garc\u00eda M\u00e1rquez",
+                "H2O"
+            ]
+        },
+        {
+            "materia": "Geograf\u00eda",
+            "tematica": "General",
+            "numero_preguntas": 5,
+            "preguntas": [
+                "\u00bfCu\u00e1l es la capital de Francia?",
+                "\u00bfCu\u00e1nto es 2 + 2?",
+                "\u00bfCu\u00e1l es el oc\u00e9ano m\u00e1s grande del mundo?",
+                "\u00bfQui\u00e9n escribi\u00f3 'Cien a\u00f1os de soledad'?",
+                "\u00bfCu\u00e1l es la f\u00f3rmula qu\u00edmica del agua?"
+            ],
+            "respuestas": [
+                "Par\u00eds",
+                "4",
+                "Pac\u00edfico",
+                "Gabriel Garc\u00eda M\u00e1rquez",
+                "H2O"
+            ]
+        },
+        {
+            "materia": "Geograf\u00eda",
+            "tematica": "General",
+            "numero_preguntas": 5,
+            "preguntas": [
+                "\u00bfCu\u00e1l es la capital de Francia?",
+                "\u00bfCu\u00e1nto es 2 + 2?",
+                "\u00bfCu\u00e1l es el oc\u00e9ano m\u00e1s grande del mundo?",
+                "\u00bfQui\u00e9n escribi\u00f3 'Cien a\u00f1os de soledad'?",
+                "\u00bfCu\u00e1l es la f\u00f3rmula qu\u00edmica del agua?"
+            ],
+            "respuestas": [
+                "Par\u00eds",
+                "4",
+                "Pac\u00edfico",
+                "Gabriel Garc\u00eda M\u00e1rquez",
+                "H2O"
+            ]
+        },
+        {
+            "materia": "Geograf\u00eda",
+            "tematica": "General",
+            "numero_preguntas": 5,
+            "preguntas": [
+                "\u00bfCu\u00e1l es la capital de Francia?",
+                "\u00bfCu\u00e1nto es 2 + 2?",
+                "\u00bfCu\u00e1l es el oc\u00e9ano m\u00e1s grande del mundo?",
+                "\u00bfQui\u00e9n escribi\u00f3 'Cien a\u00f1os de soledad'?",
+                "\u00bfCu\u00e1l es la f\u00f3rmula qu\u00edmica del agua?"
+            ],
+            "respuestas": [
+                "Par\u00eds",
+                "4",
+                "Pac\u00edfico",
+                "Gabriel Garc\u00eda M\u00e1rquez",
+                "H2O"
+            ]
+        }
+    ]
 }

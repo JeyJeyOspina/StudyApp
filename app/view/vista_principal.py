@@ -2,12 +2,15 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 
+from app.view.vista_buscar_examen import VistaBuscarExamenes
+
 
 class VistaPrincipal:
-    def __init__(self, root, callback_cerrar_sesion, usuario):
+    def __init__(self, root, callback_cerrar_sesion, usuario, estudio):
         self.root = root
         self.callback_cerrar_sesion = callback_cerrar_sesion
         self.usuario = usuario
+        self.estudio = estudio
 
         # Frame principal
         self.frame = tk.Frame(self.root, bg="#003366")
@@ -78,8 +81,9 @@ class VistaPrincipal:
         messagebox.showinfo("Planes de Estudio", "Función en desarrollo")
 
     def realizar_examen(self):
-        # Implementar vista de exámenes
-        messagebox.showinfo("Exámenes", "Función en desarrollo")
+        self.frame.pack_forget()
+        from app.view.vista_buscar_examen import VistaBuscarExamenes  # Importar la vista de buscar exámenes
+        VistaBuscarExamenes(self.root, self.estudio, self.mostrar_vista_principal)  # Asegúrate de pasar el estudio
 
     def destroy(self):
         self.frame.destroy()
