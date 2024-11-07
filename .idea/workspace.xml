@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Se actualizan versiones">
-      <change afterPath="$PROJECT_DIR$/app/view/vista_buscar_examen.py" afterDir="false" />
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Se agrega la funcionalidad realizar examen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/datos/datos_estudio.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/datos/datos_estudio.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/study.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/study.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/vista_principal.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/vista_principal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/vista_buscar_examen.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/vista_buscar_examen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -541,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730987718822</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Se agrega la funcionalidad realizar examen">
+      <option name="closed" value="true" />
+      <created>1730991184735</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1730991184735</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,7 +577,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correcciones del merge pasado" />
     <MESSAGE value="Se empieza a trabajar en una posible interfaz" />
     <MESSAGE value="Se arreglan conflictos del metodo agregar_evento_grupo_de_estudio" />
     <MESSAGE value="Se divide la interfaz en diferentes módulos para su vista dentro del paquete view, se crean los módulos vista_inicial y vista_registro, se cambia el código del main para ejecutar la interfaz en vez de la consola" />
@@ -596,6 +601,7 @@
     <MESSAGE value="Se agrega el metodo str a la clase usuario y se guarda el objeto usuario del inicio de sesión en el modulo vista_login en el metodo iniciar sesion" />
     <MESSAGE value="Se agrega el requisito unirse a grupo guardando el usuario activo" />
     <MESSAGE value="Se actualizan versiones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se actualizan versiones" />
+    <MESSAGE value="Se agrega la funcionalidad realizar examen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega la funcionalidad realizar examen" />
   </component>
 </project>

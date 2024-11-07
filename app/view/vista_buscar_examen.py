@@ -23,7 +23,7 @@ class VistaBuscarExamenes:
         self.tree.pack(expand=True, fill='both')
 
         # Cargar exámenes
-        self.cargar_examenes()
+        #self.cargar_examenes()
 
         # Botón para iniciar examen
         self.btn_iniciar = ttk.Button(self.frame, text="Iniciar Examen", command=self.iniciar_examen)
