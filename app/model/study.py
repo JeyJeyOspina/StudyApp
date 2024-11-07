@@ -55,7 +55,8 @@ class GrupoDeEstudio:
         self.horario: time = horario
         self.miembros: list[Usuario] = []
 
-    def agregar_evento_grupo_de_estudio(self, calendario: Calendario, titulo: str, year: int, mes: int, dia: int, hora: int = 0, duracion: int = 0,
+    def agregar_evento_grupo_de_estudio(self, calendario: Calendario, titulo: str, year: int, mes: int, dia: int,
+                                        hora: int = 0, duracion: int = 0,
                                         ubicacion: str = "", detalles: str = "") -> bool:
 
         fecha: datetime = datetime(year, mes, dia, hora)
@@ -99,6 +100,7 @@ class PlanDeEstudio:
         self.materia: str = materia
         self.universidad: str = universidad
         self.intensidad_semanal: int = intensidad_semanal
+
 
 class Examen:
 

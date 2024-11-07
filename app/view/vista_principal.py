@@ -68,10 +68,10 @@ class VistaPrincipal:
         from app.view.vista_buscar_grupo import VistaBuscarGrupos
         VistaBuscarGrupos(self.root, self.mostrar_vista_principal, self.usuario)
 
-
     def ver_calendario(self):
-        # Implementar vista del calendario
-        messagebox.showinfo("Calendario", "Función en desarrollo")
+        self.frame.pack_forget()
+        from app.view.vista_ver_calendario import VistaVerCalendario
+        VistaVerCalendario(self.root, self.usuario, self.mostrar_vista_principal)
 
     def ver_planes(self):
         # Implementar vista de planes de estudio
