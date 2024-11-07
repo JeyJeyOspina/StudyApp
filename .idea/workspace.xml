@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Se agrega el metodo str a la clase usuario y se guarda el objeto usuario del inicio de sesión en el modulo vista_login en el metodo iniciar sesion">
+    <list default="true" id="0f203638-88d9-4fdf-a9b2-3d9dc0206497" name="Changes" comment="Se agrega el requisito unirse a grupo guardando el usuario activo">
+      <change afterPath="$PROJECT_DIR$/app/view/vista_buscar_examenes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/datos/datos_estudio.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/datos/datos_estudio.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/study.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/study.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/interfaz_final.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/interfaz_final.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/vista_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/vista_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/vista_buscar_grupo.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/vista_buscar_grupo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/vista_principal.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/vista_principal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/vista_ver_grupos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/vista_ver_grupos.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -525,7 +527,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730917493828</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Se agrega el requisito unirse a grupo guardando el usuario activo">
+      <option name="closed" value="true" />
+      <created>1730926851385</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1730926851385</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="se termina la conexion exitosa del reuisito de buscar grupo de estudio con la interfaz" />
     <MESSAGE value="actualizacion de version" />
     <MESSAGE value="correcciones del merge pasado" />
     <MESSAGE value="Se empieza a trabajar en una posible interfaz" />
@@ -580,6 +589,7 @@
     <MESSAGE value="se elimina el modulo vista_grupos" />
     <MESSAGE value="Se crea en la aplicacion un grupo de calculo y se eliminanan import innecesarios" />
     <MESSAGE value="Se agrega el metodo str a la clase usuario y se guarda el objeto usuario del inicio de sesión en el modulo vista_login en el metodo iniciar sesion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrega el metodo str a la clase usuario y se guarda el objeto usuario del inicio de sesión en el modulo vista_login en el metodo iniciar sesion" />
+    <MESSAGE value="Se agrega el requisito unirse a grupo guardando el usuario activo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega el requisito unirse a grupo guardando el usuario activo" />
   </component>
 </project>
