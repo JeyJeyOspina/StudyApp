@@ -12,9 +12,9 @@ class Aplicacion:
         self.root = tk.Tk()
         self.vista_actual = None
         self.mostrar_vista_inicial()
-        self.root.title("Sudy App")
+        self.root.title("Study App")
         self.root.geometry("400x300")
-        self.root.configure(bg="#003366") # Color de fondo azul oscuro
+        self.root.configure(bg="#003366")  # Color de fondo azul oscuro
 
     def mostrar_vista_inicial(self):
         if self.vista_actual:
@@ -53,6 +53,7 @@ class Aplicacion:
 
     def ejecutar(self):
         self.root.mainloop()
+
 
 """class Aplicacion:
     def __init__(self):
