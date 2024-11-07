@@ -84,6 +84,7 @@ class Usuario:
         self.carrera: str = carrera
         self.semestre_actual: int = semestre_actual
         self.grupos_pertenecientes: list[GrupoDeEstudio] = []
+        self.calendario: list[Calendario] = []
 
     def pertenece_a_almenos_un_grupo(self) -> bool:
         if len(self.grupos_pertenecientes) == 0:

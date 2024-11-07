@@ -1,0 +1,101 @@
+Index: app/datos/datos_estudio.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>    {\r\n        \"estudiantes\": [\r\n            {\r\n                \"nombre\": \"b\",\r\n                \"correo\": \"b\",\r\n                \"id\": 2,\r\n                \"carrera\": \"b\",\r\n                \"semestre_actual\": 2,\r\n                \"grupos_pertenecientes\": []\r\n            },\r\n            {\r\n                \"nombre\": \"a\",\r\n                \"correo\": \"a\",\r\n                \"id\": 1,\r\n                \"carrera\": \"a\",\r\n                \"semestre_actual\": 1,\r\n                \"grupos_pertenecientes\": [\r\n                    \"Grupo1\"\r\n                ]\r\n            }\r\n        ],\r\n        \"grupos_de_estudio\": [\r\n            {\r\n                \"nombre\": \"Grupo1\",\r\n                \"tematica\": \"F\\u00edsica\",\r\n                \"modalidad\": \"Presencial\",\r\n                \"horario\": \"10:00:00\",\r\n                \"miembros\": [\r\n                    \"a\"\r\n                ]\r\n            },\r\n            {\r\n                \"nombre\": \"Grupo2\",\r\n                \"tematica\": \"C\\u00e1lculos\",\r\n                \"modalidad\": \"Presencial\",\r\n                \"horario\": \"08:00:00\",\r\n                \"miembros\": []\r\n            }\r\n        ],\r\n        \"planes_de_estudio\": [],\r\n        \"calendario\": {\r\n            \"eventos\": []\r\n        }\r\n    }
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/datos/datos_estudio.json b/app/datos/datos_estudio.json
+--- a/app/datos/datos_estudio.json	(revision e7ddfd5f3c09fea6102bf36d00c77a77304e2e21)
++++ b/app/datos/datos_estudio.json	(date 1730962056000)
+@@ -1,44 +1,44 @@
+-    {
+-        "estudiantes": [
+-            {
+-                "nombre": "b",
+-                "correo": "b",
+-                "id": 2,
+-                "carrera": "b",
+-                "semestre_actual": 2,
+-                "grupos_pertenecientes": []
+-            },
+-            {
+-                "nombre": "a",
+-                "correo": "a",
+-                "id": 1,
+-                "carrera": "a",
+-                "semestre_actual": 1,
+-                "grupos_pertenecientes": [
+-                    "Grupo1"
+-                ]
+-            }
+-        ],
+-        "grupos_de_estudio": [
+-            {
+-                "nombre": "Grupo1",
+-                "tematica": "F\u00edsica",
+-                "modalidad": "Presencial",
+-                "horario": "10:00:00",
+-                "miembros": [
+-                    "a"
+-                ]
+-            },
+-            {
+-                "nombre": "Grupo2",
+-                "tematica": "C\u00e1lculos",
+-                "modalidad": "Presencial",
+-                "horario": "08:00:00",
+-                "miembros": []
+-            }
+-        ],
+-        "planes_de_estudio": [],
+-        "calendario": {
+-            "eventos": []
+-        }
+-    }
+\ No newline at end of file
++{
++    "estudiantes": [
++        {
++            "nombre": "b",
++            "correo": "b",
++            "id": 2,
++            "carrera": "b",
++            "semestre_actual": 2,
++            "grupos_pertenecientes": []
++        },
++        {
++            "nombre": "a",
++            "correo": "a",
++            "id": 1,
++            "carrera": "a",
++            "semestre_actual": 1,
++            "grupos_pertenecientes": [
++                "Grupo1"
++            ]
++        }
++    ],
++    "grupos_de_estudio": [
++        {
++            "nombre": "Grupo1",
++            "tematica": "F\u00edsica",
++            "modalidad": "Presencial",
++            "horario": "10:00:00",
++            "miembros": [
++                "a"
++            ]
++        },
++        {
++            "nombre": "Grupo2",
++            "tematica": "C\u00e1lculos",
++            "modalidad": "Presencial",
++            "horario": "08:00:00",
++            "miembros": []
++        }
++    ],
++    "planes_de_estudio": [],
++    "calendario": {
++        "eventos": []
++    }
++}
+\ No newline at end of file
